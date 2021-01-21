@@ -3,7 +3,7 @@ WARNING: THIS IS STILL EXPERIMENTAL STUFF
 I want to have the ability to assign specific behaviors to each room without messing with the main engine
 So this is a file for client-side modifications (mods). There is one for the server side as well.
 Their naming convention is roomIdFunction.
-The functions are called by the engine at crucial points, only if they exist. 
+The functions are called by the engine at crucial points, only if they exist.
 */
 
 //when my players joins the game for the first time, after everything in the room is initialized
@@ -115,7 +115,7 @@ function initMod(playerId, roomId) {
 		print("reloadVideo received");
 		setVideo(videoId, true)
 	});
-	
+
 	socket.on('changeVideo', function (videoId)
 	{
 		print("changeVideo received");
@@ -131,7 +131,7 @@ function initMod(playerId, roomId) {
 function experimentsEnter(playerId, roomId) {
     print("MOD: " + players[playerId].nickName + " entered room " + roomId);
 
-    //a full screen welcome text appears 
+    //a full screen welcome text appears
     longText = "Welcome " + players[playerId].nickName;
     longTextLines = -1;
     longTextAlign = "center";
@@ -419,30 +419,31 @@ function firstFloorEnter(playerId, roomId) {
 
 	var youtubeUrl = "https://www.youtube.com/embed/";
 
-	var youtubeParameters = "?autoplay=1&mute=1&enablejsapi=1&loop=1&playlist=";
-	
-	var playlistId = "playlist&list=PLNiztf0SpnykWe8WJuka-EPJLvKCNg5XC";
+	var youtubeParameters = ""//"?autoplay=1&mute=1&enablejsapi=1&loop=1&playlist=";
+
+	var playlistId = "BmdHXUlAIgc";
 
 	var currentLocalYoutubeId = null;
-	
-	function LIFFTheater1Enter(playerId, roomId)
+
+	function dBsZaalEnter(playerId, roomId)
 	{
 		print("Freeplay! " + players[playerId].nickName + " entered room " + roomId);
 		if(playerId == me.id && players[playerId].nickName.length > 0)
 		{
-			print("player with name entered freeplay");
+			print("player with name entered dBs");
 			// start the video!
-			setVideo("playlist&list=PLNiztf0SpnykWe8WJuka-EPJLvKCNg5XC");
+      setVideo("BmdHXUlAIgc");
+			//setVideo("playlist&list=PLNiztf0SpnykWe8WJuka-EPJLvKCNg5XC");
 		}
 		e = document.getElementById("talk-form");
 		if (e != null)
 			e.style.display = "none";
-		
-		e = document.getElementById("no-talkie");
+
+		//e = document.getElementById("no-talkie");
 		if (e != null)
 			e.style.display = "block";
 	}
-	
+
 	function setVideo(videoId, reload)
 	{
 		if(nickName == "")
@@ -450,7 +451,7 @@ function firstFloorEnter(playerId, roomId) {
 			console.log("Player in lurk mode, don't start video yet!");
 			return;
 		}
-		
+
 		if(videoId != currentLocalYoutubeId || reload == true)
 		{// only update video if it has changed!
 			currentLocalYoutubeId = videoId;
@@ -462,7 +463,7 @@ function firstFloorEnter(playerId, roomId) {
 		if (e != null)
 			e.style.display = "block";
 	}
-	
+
 	//roomnameExit: called right before a player exits or disconnects
 	// this seems to just be called for other players!
 	// Had to modify client to have it called for the play leaving
@@ -479,7 +480,7 @@ function firstFloorEnter(playerId, roomId) {
 			e = document.getElementById("talk-form");
 			if (e != null)
 			  e.style.display = "block";
-			
+
 			e = document.getElementById("no-talkie");
 		  	if (e != null)
 			  e.style.display = "none";
@@ -499,7 +500,7 @@ function firstFloorEnter(playerId, roomId) {
 			e.style.display = "none";
 	}
 	}
-    
+
     function LIFFTheater2Enter(playerId, roomId)
     {
         //Empty just to declare this

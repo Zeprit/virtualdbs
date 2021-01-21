@@ -1,8 +1,8 @@
 //settings are just variables that can be sent to the client from the server
-//they are either related to the rooms or shared with the server 
+//they are either related to the rooms or shared with the server
 module.exports.SETTINGS = {
     //if not specified by the url where is the starting point
-    defaultRoom: "LIFFOutside",
+    defaultRoom: "dBsZaal",
     //minimum time between talk messages enforced by both client and server
     ANTI_SPAM: 1000,
     //shows up at first non lurking login
@@ -28,7 +28,7 @@ module.exports.ROOMS = {
         bubblesY: 50,
         //if spawning directly in this room, top left and bottom right point defining the rectangular spawn area (random within it)
         spawn: [106, 171, 153, 193],
-        
+
         //music: "insideliff.mp3",
         //graphics with active areas Sierra Online adventures style
         //color coded as below, #FFFFFF is walkable, transparent is obstacle
@@ -47,7 +47,7 @@ module.exports.ROOMS = {
             hab5236: { cmd: "enter", room: "LIFFTheater2", label: "Theater Room 2", point: [226, 52], enterPoint: [126, 192], obstacle: false },
             hd5521b: { cmd: "enter", room: "PhotoBooth", label: "Photo Booth", point: [92, 116], enterPoint: [156, 186], obstacle: true },
             h2f77ba: { cmd: "enter", room: "Sewer", label: "Shawshank Redemption", point: [128, 105], enterPoint: [215, 150], obstacle: false },
-            
+
             h00c6ba: { cmd: "text", url: "https://www.liff.nl/delifferoo", label: "DeLIFFeroo", txt: "For all your food-related needs.\n\nClick or Tap on this box to visit the store.", align: "center", lines: 4, point: [78,170] },
             he35bc8: { cmd: "text", url: "https://shop.liff.nl/", label: "Merch", txt: "T-shirts that blow your socks off!\n\nClick or Tap on this box to visit the store.", align: "center", lines: 4, point: [223, 175] },
             h1ea944: { cmd: "text", url: "https://www.liff.nl/LIFF-Bier", label: "Pronck-LIFF-Beer", txt: "A tasty adult beverage.\n\nClick or Tap on this box for more info.", align: "center", lines: 4, point: [61, 143] },
@@ -129,6 +129,25 @@ module.exports.ROOMS = {
         }
     },
 
+    dBsZaal: {
+        bg: "dBsZaal.png",
+        frames: 1,
+        frameDelay: 30,
+        avatarScale: 4,
+        area: "likelike-backyard-areas.png",
+        tint: "#ffffff",
+        pageBg: "#170102",
+        bubblesY: 20,
+        spawn: [116, 173, 138, 191],
+        areaColors: {
+            //h will be replaced by #
+            hff77a8: { cmd: "enter", room: "LIFFLobby", label: "Main Hall", point: [126, 192], enterPoint: [39, 90], obstacle: false },
+        },
+        things: {
+
+        }
+    },
+
     PhotoBooth: {
         bg: "photobooth_liff.png",
         frames: 2,
@@ -145,7 +164,7 @@ module.exports.ROOMS = {
         },
         things: {
             //spreadsheets only 1 row ok?
-            
+
 
         }
     },
@@ -160,7 +179,7 @@ module.exports.ROOMS = {
         spawn: [106, 178, 150, 193],
         areaColors: {
             hffec27: { cmd: "enter", room: "LIFFLobby", label: "Main Hall", point: [126, 197], enterPoint: [226, 55], obstacle: false },
-        
+
         },
         things: {
             //sprite spreadsheets only 1 row ok?
@@ -186,7 +205,7 @@ module.exports.ROOMS = {
             Chair12: { file: "LIFFtheater2_Chair.png", position: [170, 148], visible: true},
         }
     },
-    
+
     Sewer: {
         bg: "LIFFSewer.png",
         frames: 14,
@@ -205,11 +224,11 @@ module.exports.ROOMS = {
         },
         things: {
             //spreadsheets only 1 row ok?
-            
+
 
         }
     },
-  
+
   River: {
         bg: "LIFFRiver.png",
         frames: 3,
@@ -227,8 +246,8 @@ module.exports.ROOMS = {
         },
         things: {
             //spreadsheets only 1 row ok?
-            
-            
+
+
         }
     },
 
