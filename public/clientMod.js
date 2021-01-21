@@ -419,11 +419,11 @@ function firstFloorEnter(playerId, roomId) {
 
 	var youtubeUrl = "https://www.youtube.com/embed/";
 
-	var youtubeParameters = "";//"?autoplay=1&mute=1&enablejsapi=1&loop=1&playlist=";
+	var youtubeParameters = "?autoplay=1&mute=1&enablejsapi=1&loop=1";
 
-	var playlistId = "BmdHXUlAIgc";
+	var playlistId = "";
 
-	var currentLocalYoutubeId = null;
+	var currentLocalYoutubeId = "BmdHXUlAIgc"; //null;
 
 	function dBsZaalEnter(playerId, roomId)
 	{
@@ -439,7 +439,7 @@ function firstFloorEnter(playerId, roomId) {
 		if (e != null)
 			e.style.display = "none";
 
-		//e = document.getElementById("no-talkie");
+		e = document.getElementById("no-talkie");
 		if (e != null)
 			e.style.display = "block";
 	}
