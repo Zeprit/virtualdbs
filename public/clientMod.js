@@ -419,7 +419,7 @@ function firstFloorEnter(playerId, roomId) {
 
 	var youtubeUrl = "https://www.youtube.com/embed/";
 
-	var youtubeParameters = ""//"?autoplay=1&mute=1&enablejsapi=1&loop=1&playlist=";
+	var youtubeParameters = "";//"?autoplay=1&mute=1&enablejsapi=1&loop=1&playlist=";
 
 	var playlistId = "BmdHXUlAIgc";
 
