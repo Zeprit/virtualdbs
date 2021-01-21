@@ -435,13 +435,13 @@ function firstFloorEnter(playerId, roomId) {
       setVideo("BmdHXUlAIgc");
 			//setVideo("playlist&list=PLNiztf0SpnykWe8WJuka-EPJLvKCNg5XC");
 		}
-	  //e = document.getElementById("talk-form");
-		//if (e != null)
-			//e.style.display = "none";
+	  e = document.getElementById("talk-form");
+		if (e != null)
+			e.style.display = "none";
 
-		//e = document.getElementById("no-talkie");
+	//	e = document.getElementById("no-talkie");
 		//if (e != null)
-			//e.style.display = "block";
+		//	e.style.display = "block";
 	}
 
 	function setVideo(videoId, reload)
@@ -459,9 +459,9 @@ function firstFloorEnter(playerId, roomId) {
 			player = select("#yt_video");
 			player.attribute('src', videoUrl);
 		}
-	//	e = document.getElementById("video-container");
-		//if (e != null)
-		//	e.style.display = "block";
+		e = document.getElementById("video-container");
+		if (e != null)
+			e.style.display = "block";
 	}
 
 	//roomnameExit: called right before a player exits or disconnects
