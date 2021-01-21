@@ -423,7 +423,7 @@ function firstFloorEnter(playerId, roomId) {
 
 	var playlistId = "";
 
-	var currentLocalYoutubeId = "BmdHXUlAIgc"; //null;
+	var currentLocalYoutubeId = null; //null;
 
 	function dBsZaalEnter(playerId, roomId)
 	{
