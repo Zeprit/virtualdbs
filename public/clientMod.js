@@ -439,9 +439,9 @@ function firstFloorEnter(playerId, roomId) {
 		if (e != null)
 			e.style.display = "none";
 
-		e = document.getElementById("no-talkie");
-		if (e != null)
-			e.style.display = "block";
+		//e = document.getElementById("no-talkie");
+		//if (e != null)
+			//e.style.display = "block";
 	}
 
 	function setVideo(videoId, reload)
