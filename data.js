@@ -137,7 +137,7 @@ module.exports.ROOMS = {
         area: "likelike-backyard-areas.png",
         tint: "#ffffff",
         pageBg: "#170102",
-        bubblesY: 200,
+        bubblesY: 160,
         spawn: [116, 173, 138, 191],
         areaColors: {
             //h will be replaced by #
