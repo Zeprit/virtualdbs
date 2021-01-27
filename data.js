@@ -134,14 +134,14 @@ module.exports.ROOMS = {
         frames: 1,
         frameDelay: 30,
         avatarScale: 4,
-        area: "likelike-backyard-areas.png",
+        area: "dBsZaal-areas.png",
         tint: "#ffffff",
         pageBg: "#170102",
         bubblesY: 170,
         spawn: [116, 173, 138, 191],
         areaColors: {
             //h will be replaced by #
-            hff77a8: { cmd: "enter", room: "LIFFLobby", label: "Main Hall", point: [126, 192], enterPoint: [39, 90], obstacle: false },
+            //hff77a8: { cmd: "enter", room: "LIFFLobby", label: "Main Hall", point: [126, 192], enterPoint: [39, 90], obstacle: false },
         },
         things: {
 
