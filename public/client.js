@@ -1167,14 +1167,14 @@ function update() {
     else if (screen == "avatar") {
         image(menuBg, 0, 0, WIDTH, HEIGHT);
 
-        textFont(font, FONT_SIZE * 4);
+        textFont(font, FONT_SIZE * 2);
         textAlign(CENTER, BASELINE);
         fill("#FFFFFF");
         text("Body", WIDTH / 4, HEIGHT / 2 - 10);
         text("Color", (WIDTH) - (WIDTH / 4), HEIGHT / 2 - 10);
 
         text("Choose your avatar", WIDTH / 2, 40 * ASSET_SCALE);
-        textFont(font, FONT_SIZE * 1);
+        textFont(font, FONT_SIZE * 0.5);
         text(descripText[currentAvatar], WIDTH / 2, HEIGHT - 80);
 
         menuGroup.draw();
@@ -1408,8 +1408,8 @@ function update() {
                     strokeWeight(s);
                     stroke(UI_BG);
                     strokeCap(SQUARE);
-                    if (bY < speaker.y){
-                      line(floor(speaker.x), floor(speaker.y + (AVATAR_H * s) + BUBBLE_MARGIN), floor(speaker.x), floor(b.y));
+                    if (bY * 2 > (speaker.y) - ((AVATAR_H * s) / 3)){
+                      line(floor(speaker.x), floor(speaker.y - BUBBLE_MARGIN), floor(speaker.x), floor(b.y));
                     }else{
                       line(floor(speaker.x), floor(speaker.y - (AVATAR_H * s) - BUBBLE_MARGIN), floor(speaker.x), floor(b.y));
                     }

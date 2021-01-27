@@ -435,9 +435,9 @@ function firstFloorEnter(playerId, roomId) {
       setVideo("BmdHXUlAIgc");
 			//setVideo("playlist&list=PLNiztf0SpnykWe8WJuka-EPJLvKCNg5XC");
 		}
-	  e = document.getElementById("talk-form");
-		if (e != null)
-			e.style.display = "none";
+	 // e = document.getElementById("talk-form");
+		//if (e != null)
+			//e.style.display = "none";
 
 	//	e = document.getElementById("no-talkie");
 		//if (e != null)
