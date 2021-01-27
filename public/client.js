@@ -77,9 +77,9 @@ var FONT_FILE = "assets/monogram_extended.ttf";
 var FONT_SIZE = 32; //to avoid blur
 var FONT_SIZE_LARGE = 64;
 var font;
-var TEXT_H = 8;
-var TEXT_PADDING = 3;
-var TEXT_LEADING = TEXT_H + 4;
+var TEXT_H = 14;
+var TEXT_PADDING = 6;
+var TEXT_LEADING = TEXT_H + 8;
 
 var LOGO_FILE = "logo.png";
 var MENU_BG_FILE = "menu_liff.png";
@@ -1403,11 +1403,16 @@ function update() {
             if (speaker != null && !b.orphan) {
                 if (round(speaker.x) == b.px && round(speaker.y) == b.py) {
                     var s = ROOMS[speaker.room].avatarScale;
+                    var bY = ROOMS[speaker.room].bubblesY;
 
                     strokeWeight(s);
                     stroke(UI_BG);
                     strokeCap(SQUARE);
-                    line(floor(speaker.x), floor(speaker.y - AVATAR_H * s - BUBBLE_MARGIN), floor(speaker.x), floor(b.y));
+                    if (bY < speaker.y){
+                      line(floor(speaker.x), floor(speaker.y + (AVATAR_H * s) + BUBBLE_MARGIN), floor(speaker.x), floor(b.y));
+                    }else{
+                      line(floor(speaker.x), floor(speaker.y - (AVATAR_H * s) - BUBBLE_MARGIN), floor(speaker.x), floor(b.y));
+                    }
                 }
                 else {
                     //once it moves break the line
