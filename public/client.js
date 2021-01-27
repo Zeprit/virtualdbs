@@ -1410,7 +1410,7 @@ function update() {
                     strokeCap(SQUARE);
                     if (bY * 2 > (speaker.y) - ((AVATAR_H * s) / 3)){
                       line(floor(speaker.x), floor(speaker.y - BUBBLE_MARGIN), floor(speaker.x), floor(b.y));
-                    }else{
+                    }else if (bY * 2 < (speaker.y) - ((AVATAR_H * s))){
                       line(floor(speaker.x), floor(speaker.y - (AVATAR_H * s) - BUBBLE_MARGIN), floor(speaker.x), floor(b.y));
                     }
                 }
