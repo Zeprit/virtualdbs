@@ -2,7 +2,7 @@
 //they are either related to the rooms or shared with the server
 module.exports.SETTINGS = {
     //if not specified by the url where is the starting point
-    defaultRoom: "dBsZaal",
+    defaultRoom: "dBsBar",
     //minimum time between talk messages enforced by both client and server
     ANTI_SPAM: 1000,
     //shows up at first non lurking login
@@ -135,6 +135,25 @@ module.exports.ROOMS = {
         frameDelay: 30,
         avatarScale: 4,
         area: "dBsZaal-areas.png",
+        tint: "#ffffff",
+        pageBg: "#170102",
+        bubblesY: 170,
+        spawn: [116, 173, 138, 191],
+        areaColors: {
+            //h will be replaced by #
+            //hff77a8: { cmd: "enter", room: "LIFFLobby", label: "Main Hall", point: [126, 192], enterPoint: [39, 90], obstacle: false },
+        },
+        things: {
+
+        }
+    },
+
+    dBsBar: {
+        bg: "dBsBar.png",
+        frames: 1,
+        frameDelay: 30,
+        avatarScale: 4,
+        area: "dBsBar-areas.png",
         tint: "#ffffff",
         pageBg: "#170102",
         bubblesY: 170,
