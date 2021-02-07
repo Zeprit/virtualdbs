@@ -467,7 +467,7 @@ function firstFloorEnter(playerId, roomId) {
 	//roomnameExit: called right before a player exits or disconnects
 	// this seems to just be called for other players!
 	// Had to modify client to have it called for the play leaving
-	function LIFFTheater1Exit(playerId)
+	function dBsZaalExit(playerId)
 	{
 		if(playerId == me.id)
 		{
@@ -491,7 +491,7 @@ function firstFloorEnter(playerId, roomId) {
 			console.log(players[playerId].nickName + " Left Freeplay");
 		}
     }
-	function LIFFLobbyEnter(playerId, roomId)
+	function dBsBarEnter(playerId, roomId)
 	{
 		if(playerId == me.id)
 		{
