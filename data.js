@@ -156,8 +156,8 @@ module.exports.ROOMS = {
         area: "dBsBar-areas.png",
         tint: "#ffffff",
         pageBg: "#170102",
-        bubblesY: 170,
-        spawn: [116, 173, 138, 191],
+        bubblesY: 45,
+        spawn: [72, 90, 173, 152],
         areaColors: {
             //h will be replaced by #
             //hff77a8: { cmd: "enter", room: "LIFFLobby", label: "Main Hall", point: [126, 192], enterPoint: [39, 90], obstacle: false },
