@@ -141,7 +141,7 @@ module.exports.ROOMS = {
         spawn: [72, 90, 173, 152],
         areaColors: {
             //h will be replaced by #
-            //hff77a8: { cmd: "enter", room: "LIFFLobby", label: "Main Hall", point: [126, 192], enterPoint: [39, 90], obstacle: false },
+            hFF00FF: { cmd: "enter", room: "dBsBar", label: "Bar", point: [247, 136], enterPoint: [94, 74], obstacle: false },
         },
         things: {
 
@@ -160,7 +160,7 @@ module.exports.ROOMS = {
         spawn: [72, 90, 173, 152],
         areaColors: {
             //h will be replaced by #
-            //hff77a8: { cmd: "enter", room: "LIFFLobby", label: "Main Hall", point: [126, 192], enterPoint: [39, 90], obstacle: false },
+            hFF00FF: { cmd: "enter", room: "dBsZaal", label: "Zaal", point: [94, 64], enterPoint: [234, 136], obstacle: false },
         },
         things: {
 
