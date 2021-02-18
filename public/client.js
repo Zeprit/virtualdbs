@@ -162,8 +162,8 @@ var longText = "";
 var longTextLines;
 var longTextAlign;
 var longTextLink = "";
-var LONG_TEXT_BOX_W = 220;
-var LONG_TEXT_PADDING = 4;
+var LONG_TEXT_BOX_W = 400;
+var LONG_TEXT_PADDING = 8;
 
 //To show when banned or disconnected, disables the client on black screen
 var errorMessage = "";
