@@ -46,8 +46,8 @@ var HEIGHT = NATIVE_HEIGHT * ASSET_SCALE;
 var canvasScale;
 
 //all avatars are the same size
-var AVATAR_W = 10;
-var AVATAR_H = 18;
+var AVATAR_W = 20;
+var AVATAR_H = 36;
 //number of avatars in the sheets
 var AVATARS = 14;
 //the big file if used
