@@ -2342,7 +2342,7 @@ function previewAvatar() {
     var aSS = loadSpriteSheet(aGraphics, AVATAR_W, AVATAR_H, round(emoteSheets[currentAvatar].width / AVATAR_W));
     var aAnim = loadAnimation(aSS);
     avatarPreview = createSprite(width / 2, height / 2);
-    avatarPreview.scale = 8;
+    avatarPreview.scale = 4;
     avatarPreview.addAnimation("default", aAnim);
     avatarPreview.animation.frameDelay = 10;
     //avatarPreview.debug = true;
