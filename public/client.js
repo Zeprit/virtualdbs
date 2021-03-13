@@ -49,7 +49,7 @@ var canvasScale;
 var AVATAR_W = 20;
 var AVATAR_H = 36;
 //number of avatars in the sheets
-var AVATARS = 14;
+var AVATARS = 13;
 //the big file if used
 var ALL_AVATARS_SHEET = "allAvatars.png";
 //the number of frames for walk cycle and emote animation
@@ -97,7 +97,7 @@ var PAGE_COLOR = "#000000";
 
 //sprite reference color for palette swap
 //hair, skin, shirt, pants
-var REF_COLORS = ["#413830", "#c0692a", "#ff004d", "#29adff"];
+var REF_COLORS = ["#413830", "#c0692a", "#ff004d", "#29adff","#ea0046","#208acc"];
 //the palettes that will respectively replace the colors above
 //black and brown more common
 var HAIR_COLORS = ["#413830", "#413830", "#413830", "#742f29", "#742f29", "#742f29", "#ffa300", "#a8e72e", "#a28879", "#be1250", "#ffec27", "#00b543", "#ff6c24"];
@@ -2376,6 +2376,8 @@ function paletteSwap(ss, paletteNumbers, t) {
     palette[1] = SKIN_COLORS_RGB[paletteNumbers[1]];
     palette[2] = TOP_COLORS_RGB[paletteNumbers[2]];
     palette[3] = BOTTOM_COLORS_RGB[paletteNumbers[3]];
+    palette[4] = TOP_COLORS_RGB[paletteNumbers[2]];
+    palette[5] = BOTTOM_COLORS_RGB[paletteNumbers[3]];
 
 
     for (var i = 0; i < img.pixels.length; i += 4) {
@@ -2389,9 +2391,16 @@ function paletteSwap(ss, paletteNumbers, t) {
 
                 if (img.pixels[i] == REF_COLORS_RGB[j][0] && img.pixels[i + 1] == REF_COLORS_RGB[j][1] && img.pixels[i + 2] == REF_COLORS_RGB[j][2]) {
                     found = true;
+                    if (j <= 3){
                     img.pixels[i] = palette[j][0] * tint[0] / 255;
                     img.pixels[i + 1] = palette[j][1] * tint[1] / 255;
                     img.pixels[i + 2] = palette[j][2] * tint[2] / 255;
+                    }
+                    else{
+                      img.pixels[i] = palette[j][0] * (tint[0] - 26) / 255;
+                      img.pixels[i + 1] = palette[j][1] * (tint[1] - 26) / 255;
+                      img.pixels[i + 2] = palette[j][2] * (tint[2] - 26) / 255;
+                    }
                 }
 
             }
