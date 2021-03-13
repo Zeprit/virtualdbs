@@ -1714,7 +1714,7 @@ function Player(p) {
         this.sprite.mouseActive = true;
 
     //this.sprite.debug = true;
-    this.sprite.setCollider("rectangle", 0, 0, 4, 10)
+    this.sprite.setCollider("rectangle", 3, 6, 14, 30);
 
 
     //no parent in js? WHAAAAT?
@@ -2342,7 +2342,7 @@ function previewAvatar() {
     var aSS = loadSpriteSheet(aGraphics, AVATAR_W, AVATAR_H, round(emoteSheets[currentAvatar].width / AVATAR_W));
     var aAnim = loadAnimation(aSS);
     avatarPreview = createSprite(width / 2, height / 2);
-    avatarPreview.scale = 4;
+    avatarPreview.scale = 6;
     avatarPreview.addAnimation("default", aAnim);
     avatarPreview.animation.frameDelay = 10;
     //avatarPreview.debug = true;
