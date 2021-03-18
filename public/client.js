@@ -2176,6 +2176,10 @@ function executeCommand(c) {
 
             break;
 
+        case "changearearole":
+            toggleAreaColor();
+            break;
+
         case "text":
             if (c.txt != null) {
 
@@ -2611,6 +2615,12 @@ function outOfCanvas() {
 function preventBehavior(e) {
     e.preventDefault();
 };
+
+function toggleAreaColor()
+{
+    var dbar = ROOMS["dBsBar"];
+    dbar.areaColors["hff00ff"].cmd = "enter";
+}
 
 document.addEventListener("touchmove", preventBehavior, { passive: false });
 
