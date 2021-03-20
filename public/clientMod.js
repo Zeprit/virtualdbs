@@ -494,11 +494,11 @@ function firstFloorEnter(playerId, roomId) {
 	function dBsBarEnter(playerId, roomId)
 	{
 		if(playerId == me.id)
-		{
-			e = document.getElementById("video-container");
-			if (e != null)
-			e.style.display = "none";
-	}
+    {
+			 e = document.getElementById("video-container");
+			 if (e != null)
+			 e.style.display = "none";
+	  }
 	}
 
     function LIFFTheater2Enter(playerId, roomId)
