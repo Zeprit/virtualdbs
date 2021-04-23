@@ -55,7 +55,7 @@ module.exports.ROOMS =
     },
 
     dBsLobby: {
-        bg: "dBsLobby.png",
+        bg: "dBsLobbyBG.png",
         frames: 1,
         frameDelay: 30,
         avatarScale: 2,
@@ -67,6 +67,25 @@ module.exports.ROOMS =
         areaColors: {
             //h will be replaced by #
             hffff00: { cmd: "enter", room: "dBsBar", label: "Bar", point: [158, 190], enterPoint: [158, 32], obstacle: false },
+        },
+        things: {
+
+        }
+    },
+    
+    dBsBeerGarten: {
+        bg: "dBsBeerGartenBG.png",
+        frames: 1,
+        frameDelay: 30,
+        avatarScale: 2,
+        area: "dBsBeerGarten_areas.png",
+        tint: "#ffffff",
+        pageBg: "#170102",
+        bubblesY: 45,
+        spawn: [72, 90, 173, 152],
+        areaColors: {
+            //h will be replaced by #
+            hff0000: { cmd: "enter", room: "dBsLobby", label: "Bar", point: [158, 190], enterPoint: [158, 32], obstacle: false },
         },
         things: {
 
