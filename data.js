@@ -72,6 +72,7 @@ module.exports.ROOMS =
             kyon: { file: "npcKyon.png", frames: 1, frameDelay: 10, position: [226, 85]},
             sander: { file: "npcSander.png", frames: 1, frameDelay: 10, position: [219, 101]},
             nick: { file: "npcNick.png", frames: 1, frameDelay: 10, position: [222, 137]},
+            jeroen: { file: "npcJeroen.png", frames: 1, frameDelay: 10, position: [51, 48]},
         }
     },
 
