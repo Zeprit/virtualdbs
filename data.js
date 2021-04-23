@@ -35,7 +35,7 @@ module.exports.ROOMS =
         frames: 1,
         frameDelay: 30,
         avatarScale: 2,
-        area: "dBsBar-areas.png",
+        area: "dBsBar_areas.png",
         tint: "#ffffff",
         pageBg: "#170102",
         bubblesY: 45,
