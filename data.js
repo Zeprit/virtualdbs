@@ -145,7 +145,7 @@ module.exports.ROOMS =
             stool: { file: "dBsBeerGartenStool.png", frames: 1, frameDelay: 10, position: [226,139]},
             torch: { file: "dBsBeerGartenTorch.png", frames: 4, frameDelay: 10, position: [161,132]},
             torch2: { file: "dBsBeerGartenTorch.png", frames: 4, frameDelay: 10, position: [75,156]},
-            pole: { file: "dBsBeerGartenPole.png", frames: 1, frameDelay: 10, position: [112, 0]},
+            pole: { file: "dBsBeerGartenPole.png", frames: 1, frameDelay: 10, position: [112, 34]},
             poleLights: { file: "dBsBeerGartenPoleLIGHTS.png", frames: 1, frameDelay: 10, position: [0, 0]},
             fence: { file: "dBsBeerGartenFence.png", frames: 1, frameDelay: 10, position: [0,158]},
 
@@ -153,8 +153,8 @@ module.exports.ROOMS =
             evert: { file: "npcEvert.png", frames: 1, frameDelay: 10, position: [207, 152]},
             robert: { file: "npcRobert.png", frames: 1, frameDelay: 10, position: [223, 162]},
             paul: { file: "npcPaul.png", frames: 1, frameDelay: 10, position: [129, 88]},
-            tristan: { file: "npcTristan.png", frames: 1, frameDelay: 10, position: [129, 88]},
-            jos: { file: "npcJos.png", frames: 1, frameDelay: 10, position: [211, 121]},
+            tristan: { file: "npcTristan.png", frames: 1, frameDelay: 10, position: [234, 117]},
+            jos: { file: "npcJos.png", frames: 1, frameDelay: 10, position: [225, 100]},
         }
     },
 
@@ -177,7 +177,7 @@ module.exports.ROOMS =
         },
         things:
         {
-            hallLamp: { file: "dBsHallLamp.png", frames: 1, frameDelay: 10, position: [103, 0]},
+            hallLamp: { file: "dBsHallLamp.png", frames: 1, frameDelay: 10, position: [102, 0]},
             hallRedLamp: { file: "dBsHallRedLamp.png", frames: 1, frameDelay: 10, position: [144, 133]},
 
             jimmy: { file: "npcJimmy.png", frames: 1, frameDelay: 10, position: [100, 142]},
