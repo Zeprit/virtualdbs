@@ -55,7 +55,7 @@ module.exports.ROOMS =
     },
 
     dBsLobby: {
-        bg: "dBsLobby.png",
+        bg: "dBsLobbyBG.png",
         frames: 1,
         frameDelay: 30,
         avatarScale: 2,
