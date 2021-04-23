@@ -31,7 +31,7 @@ module.exports.ROOMS =
     },
 
     dBsBar: {
-        bg: "dBsBar.png",
+        bg: "dBsBarBG.png",
         frames: 1,
         frameDelay: 30,
         avatarScale: 2,
