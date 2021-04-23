@@ -54,7 +54,7 @@ module.exports.ROOMS =
             h0000ff: { cmd: "text", url: "https://www.dbstudio.nl/concerten/", label: "Programma", txt: "Klik of Tik op dit bericht om te kijken wat voor bands of evenementen er aan komen!", align: "center", lines: 3, point: [59,66] },
 
         },
-        
+
         things: 
         {
             barChair1: { file: "dBsBarChair.png", frames: 1, frameDelay: 10, position: [185, 68]},
@@ -67,6 +67,11 @@ module.exports.ROOMS =
             lampAndPlant: { file: "dBsBarLampAndPlant.png", frames: 1, frameDelay: 10, position: [119, 0]},
             plant: { file: "dBsBarPlant.png", frames: 1, frameDelay: 10, position: [2, 154]},
             shopAndPlant: { file: "dBsBarShopAndPlant.png", frames: 1, frameDelay: 10, position: [197, 34]},
+
+            andre: { file: "npcAndre.png", frames: 1, frameDelay: 10, position: [223, 61]},
+            kyon: { file: "npcKyon.png", frames: 1, frameDelay: 10, position: [226, 85]},
+            sander: { file: "npcSander.png", frames: 1, frameDelay: 10, position: [219, 101]},
+            nick: { file: "npcNick.png", frames: 1, frameDelay: 10, position: [222, 137]},
         }
     },
 
@@ -106,6 +111,9 @@ module.exports.ROOMS =
             pinkTable: { file: "dBsLobbyPinkTable.png", frames: 1, frameDelay: 10, position: [185, 108]},
             redTable: { file: "dBsLobbyRedTable.png", frames: 1, frameDelay: 10, position: [146, 140]},
             yellowTable: { file: "dBsLobbyYellowTable.png", frames: 1, frameDelay: 10, position: [103, 97]},
+
+            renata: { file: "npcRenata.png", frames: 1, frameDelay: 10, position: [187, 39]},
+            bas: { file: "npcBas.png", frames: 1, frameDelay: 10, position: [32, 83]},
         }
     },
 
@@ -124,8 +132,22 @@ module.exports.ROOMS =
             //h will be replaced by #
             hff0000: { cmd: "enter", room: "dBsLobby", label: "Lobby", point: [128,189], enterPoint: [50,35], obstacle: false },
         },
-        things: {
+        things: 
+        {
+            picnicTable1: { file: "dBsBeerGartenPicknictable1.png", frames: 1, frameDelay: 10, position: [193,82], obstacle: true},
+            picnicTable2: { file: "dBsBeerGartenPicknictable2.png", frames: 1, frameDelay: 10, position: [13,114], obstacle: true},
+            chair1: { file: "dBsBeerGartenChair1.png", frames: 1, frameDelay: 10, position: [111,102]},
+            chair2: { file: "dBsBeerGartenChair2.png", frames: 1, frameDelay: 10, position: [95,113]},
+            stool: { file: "dBsBeerGartenStool.png", frames: 1, frameDelay: 10, position: [226,139]},
+            torch: { file: "dBsBeerGartenTorch.png", frames: 4, frameDelay: 10, position: [161,132]},
+            torch2: { file: "dBsBeerGartenTorch.png", frames: 4, frameDelay: 10, position: [75,156]},
+            pole: { file: "dBsBeerGartenPole.png", frames: 1, frameDelay: 10, position: [112, 0]},
+            poleLights: { file: "dBsBeerGartenPoleLIGHTS.png", frames: 1, frameDelay: 10, position: [0, 0]},
 
+            james: { file: "npcJames.png", frames: 1, frameDelay: 10, position: [192, 153]},
+            evert: { file: "npcEvert.png", frames: 1, frameDelay: 10, position: [207, 152]},
+            robert: { file: "npcRobert.png", frames: 1, frameDelay: 10, position: [223, 162]},
+            paul: { file: "npcPaul.png", frames: 1, frameDelay: 10, position: [129, 88]},
         }
     },
 
@@ -150,6 +172,8 @@ module.exports.ROOMS =
         {
             hallLamp: { file: "dBsHallLamp.png", frames: 1, frameDelay: 10, position: [105, 0]},
             hallRedLamp: { file: "dBsHallRedLamp.png", frames: 1, frameDelay: 10, position: [144, 133]},
+
+            jimmy: { file: "npcJimmy.png", frames: 1, frameDelay: 10, position: [100, 142]},
         }
     },
 
