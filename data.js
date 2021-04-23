@@ -21,10 +21,10 @@ module.exports.ROOMS =
         pageBg: "#170102",
         bubblesY: 170,
         tYOffset: 0,
-        spawn: [72, 90, 173, 152],
+        spawn: [37, 133, 223, 184],
         areaColors: {
             //h will be replaced by #
-            hff0000: { cmd: "enter", room: "dBsBar", label: "Bar", point: [247, 136], enterPoint: [94, 74], obstacle: false },
+            hff0000: { cmd: "enter", room: "dBsBar", label: "Bar", point: [243, 144], enterPoint: [94, 74], obstacle: false },
         },
         things: {
 
@@ -41,7 +41,7 @@ module.exports.ROOMS =
         pageBg: "#170102",
         bubblesY: 45,
         tYOffset: 0,
-        spawn: [72, 90, 173, 152],
+        spawn: [66, 98, 168, 147],
         areaColors: {
             //h will be replaced by #
             hff0000: { cmd: "enter", room: "dBsZaal", label: "Zaal", point: [94, 68], enterPoint: [234, 140], obstacle: true },
@@ -68,7 +68,7 @@ module.exports.ROOMS =
         pageBg: "#170102",
         bubblesY: 45,
         tYOffset: 0,
-        spawn: [72, 90, 173, 152],
+        spawn: [141, 102, 181, 121],
         areaColors: {
             //h will be replaced by #
             hff0000: { cmd: "enter", room: "dBsBeerGarten", label: "Beer Garten", point: [50,35], enterPoint: [128,189], obstacle: false },
@@ -89,7 +89,7 @@ module.exports.ROOMS =
         pageBg: "#170102",
         bubblesY: 45,
         tYOffset: 0,
-        spawn: [72, 90, 173, 152],
+        spawn: [110, 150, 173, 180],
         areaColors: {
             //h will be replaced by #
             hff0000: { cmd: "enter", room: "dBsLobby", label: "Lobby", point: [128,189], enterPoint: [50,35], obstacle: false },
@@ -109,7 +109,7 @@ module.exports.ROOMS =
         pageBg: "#170102",
         bubblesY: 45,
         tYOffset: 0,
-        spawn: [72, 90, 173, 152],
+        spawn: [102, 26, 153, 113],
         areaColors:
         {
             //h will be replaced by #
