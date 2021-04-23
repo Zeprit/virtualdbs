@@ -66,7 +66,7 @@ module.exports.ROOMS =
         spawn: [72, 90, 173, 152],
         areaColors: {
             //h will be replaced by #
-            hffff00: { cmd: "enter", room: "dBsBar", label: "Bar", point: [158, 190], enterPoint: [158, 32], obstacle: false },
+            hff0000: { cmd: "enter", room: "Beer Garten", label: "Bar", point: [50,35], enterPoint: [128,189], obstacle: false },
         },
         things: {
 
@@ -85,7 +85,7 @@ module.exports.ROOMS =
         spawn: [72, 90, 173, 152],
         areaColors: {
             //h will be replaced by #
-            hff0000: { cmd: "enter", room: "dBsLobby", label: "Bar", point: [158, 190], enterPoint: [158, 32], obstacle: false },
+            hff0000: { cmd: "enter", room: "dBsLobby", label: "Lobby", point: [128,189], enterPoint: [50,35], obstacle: false },
         },
         things: {
 
