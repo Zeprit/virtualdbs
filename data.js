@@ -12,11 +12,11 @@ module.exports.SETTINGS = {
 module.exports.ROOMS =
 {
       dBsZaal: {
-        bg: "dBsZaal.png",
+        bg: "dBsStageBG.png",
         frames: 1,
         frameDelay: 30,
         avatarScale: 2,
-        area: "dBsZaal-areas.png",
+        area: "dBsStage_areas.png",
         tint: "#ffffff",
         pageBg: "#170102",
         bubblesY: 170,
