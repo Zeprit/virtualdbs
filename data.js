@@ -43,7 +43,7 @@ module.exports.ROOMS =
         areaColors: {
             //h will be replaced by #
             hff00ff: { cmd: "enter", room: "dBsZaal", label: "Zaal", point: [94, 68], enterPoint: [234, 136], obstacle: true },
-            hffff00: { cmd: "enter", room: "dBsLobby", label: "Lobby", point: [156, 26], enterPoint: [156, 184], obstacle: false },
+            hff7700: { cmd: "enter", room: "dBsLobby", label: "Lobby", point: [156, 26], enterPoint: [156, 184], obstacle: false },
             h00ffbc: { cmd: "enter", room: "dBsHall", label: "Hall", point: [128,190], enterPoint: [127,11], obstacle: false },
             h00ff00: { cmd: "text", url: "https://shop.dbstudio.nl/", label: "dBs Shop", txt: "Voor alle dBs merchandise, of zo een heerlijk drankje!\n\nKlik of Tik op dit bericht om de winkel te bezoeken.", align: "center", lines: 5, point: [183,70] },
             hff0000: { cmd: "text", url: "https://portal.dbstudio.nl/", label: "Reserveringen", txt: "Wil je komen repeteren in onze toffe oefenstudios?\n\nKlik of Tik op dit bericht.", align: "center", lines: 4, point: [189,149] },
