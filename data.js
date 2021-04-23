@@ -133,7 +133,15 @@ module.exports.ROOMS =
             hff0000: { cmd: "enter", room: "dBsLobby", label: "Lobby", point: [128,189], enterPoint: [50,35], obstacle: false },
         },
         things: {
-
+            picnicTable1: { file: "dBsBeerGartenPicknictable1.png", frames: 1, frameDelay: 10, position: [193,82], obstacle: true},
+            picnicTable2: { file: "dBsBeerGartenPicknictable2.png", frames: 1, frameDelay: 10, position: [13,114], obstacle: true},
+            chair1: { file: "dBsBeerGartenChair1.png", frames: 1, frameDelay: 10, position: [111,102]},
+            chair2: { file: "dBsBeerGartenChair2.png", frames: 1, frameDelay: 10, position: [95,113]},
+            stool: { file: "dBsBeerGartenStool.png", frames: 1, frameDelay: 10, position: [226,139]},
+            torch: { file: "dBsBeerGartenTorch.png", frames: 4, frameDelay: 10, position: [161,132]},
+            torch2: { file: "dBsBeerGartenTorch.png", frames: 4, frameDelay: 10, position: [75,156]},
+            pole: { file: "dBsBeerGartenPole.png", frames: 1, frameDelay: 10, position: [112, 0]},
+            poleLights: { file: "dBsBeerGartenPoleLIGHTS.png", frames: 1, frameDelay: 10, position: [0, 0]},
         }
     },
 
