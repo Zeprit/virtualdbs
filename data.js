@@ -111,6 +111,9 @@ module.exports.ROOMS =
             pinkTable: { file: "dBsLobbyPinkTable.png", frames: 1, frameDelay: 10, position: [185, 108]},
             redTable: { file: "dBsLobbyRedTable.png", frames: 1, frameDelay: 10, position: [146, 140]},
             yellowTable: { file: "dBsLobbyYellowTable.png", frames: 1, frameDelay: 10, position: [103, 97]},
+
+            renata: { file: "npcRenata.png", frames: 1, frameDelay: 10, position: [187, 39]},
+            bas: { file: "npcBas.png", frames: 1, frameDelay: 10, position: [32, 83]},
         }
     },
 
