@@ -202,7 +202,6 @@ var appearEffect, disappearEffect;
 //sounds
 var blips;
 var appearSound, disappearSound;
-var sfxStartCampfire, sfxGetGem, sfxDeliverGem;
 
 //if the server restarts the clients reconnects seamlessly
 //don't do first log kind of things
@@ -365,15 +364,6 @@ function preload() {
     disappearSound = loadSound(ASSETS_FOLDER + "disappear");
     disappearSound.playMode("sustain");
     disappearSound.setVolume(0.3);
-
-    sfxStartCampfire = loadSound(ASSETS_FOLDER + "sfxStartCampfire");
-    sfxStartCampfire.playMode("sustain");
-
-    sfxGetGem = loadSound(ASSETS_FOLDER + "sfxGetGem");
-    sfxGetGem.playMode("sustain");
-
-    sfxDeliverGem = loadSound(ASSETS_FOLDER + "sfxDeliverGem");
-    sfxDeliverGem.playMode("sustain");
     //disappearSound.setVolume(0.3);
 
 }
