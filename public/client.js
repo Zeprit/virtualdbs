@@ -49,8 +49,8 @@ var canvasScale;
 var AVATAR_W = 20;
 var AVATAR_H = 36;
 //number of avatars in the sheets
-var AVATARS = 10;
-var MAXAVATARS = 11;
+var AVATARS = 8;
+var MAXAVATARS = 9;
 //the big file if used
 var ALL_AVATARS_SHEET = "allAvatars.png";
 //the number of frames for walk cycle and emote animation
