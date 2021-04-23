@@ -43,7 +43,7 @@ module.exports.ROOMS =
         areaColors: {
             //h will be replaced by #
             hff00ff: { cmd: "enter", room: "dBsZaal", label: "Zaal", point: [94, 68], enterPoint: [234, 136], obstacle: true },
-            hffff00: { cmd: "enter", room: "dBsLobby", label: "Lobby", point: [156, 26], enterPoint: [156, 178], obstacle: false },
+            hffff00: { cmd: "enter", room: "dBsLobby", label: "Lobby", point: [156, 26], enterPoint: [156, 184], obstacle: false },
             h00ff00: { cmd: "text", url: "https://shop.dbstudio.nl/", label: "dBs Shop", txt: "Voor alle dBs merchandise, of zo een heerlijk drankje!\n\nKlik of Tik op dit bericht om de winkel te bezoeken.", align: "center", lines: 5, point: [183,70] },
             hff0000: { cmd: "text", url: "https://portal.dbstudio.nl/", label: "Reserveringen", txt: "Wil je komen repeteren in onze toffe oefenstudios?\n\nKlik of Tik op dit bericht.", align: "center", lines: 4, point: [189,149] },
             h0000ff: { cmd: "text", url: "https://www.dbstudio.nl/concerten/", label: "Programma", txt: "Klik of Tik op dit bericht om te kijken wat voor bands of evenementen er aan komen!", align: "center", lines: 3, point: [59,66] },
@@ -66,7 +66,7 @@ module.exports.ROOMS =
         spawn: [72, 90, 173, 152],
         areaColors: {
             //h will be replaced by #
-            hff0000: { cmd: "enter", room: "Beer Garten", label: "Bar", point: [50,35], enterPoint: [128,189], obstacle: false },
+            hff0000: { cmd: "enter", room: "dBsBeerGarten", label: "Beer Garten", point: [50,35], enterPoint: [128,189], obstacle: false },
         },
         things: {
 
