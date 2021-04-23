@@ -326,7 +326,7 @@ function preload() {
     menuBg2 = loadImage(ASSETS_FOLDER + MENU_BG_FILE2);
     arrowButton = loadImage(ASSETS_FOLDER + "arrowButton.png");
 
-    var logoSheet = loadSpriteSheet(ASSETS_FOLDER + LOGO_FILE, 514, 121, 4);
+    var logoSheet = loadSpriteSheet(ASSETS_FOLDER + LOGO_FILE, 192, 128, 1);
     logo = loadAnimation(logoSheet);
     logo.frameDelay = 30;
 
@@ -1522,7 +1522,7 @@ function update() {
             logoCounter += deltaTime;
             //animation(logobg, floor(width / 2), floor((height / 2) ));
             //animation(logo, floor(width / 2), floor((height / 2) + (sin(logoCounter/500) * 5) ));
-            animation(logo, floor(width / 2)+1, floor((78)  + (sin(logoCounter/500) * 3)));
+            animation(logo, floor(width / 2)+1, floor((height / 2)  + (sin(logoCounter/500) * 3)));
         }
 
     }//end game
