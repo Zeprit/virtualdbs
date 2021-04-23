@@ -26,11 +26,11 @@ module.exports.ROOMS =
             //h will be replaced by #
             hff0000: { cmd: "enter", room: "dBsBar", label: "Bar", point: [243, 144], enterPoint: [94, 74], obstacle: false },
         },
-        things: 
+        things:
         {
-            sidney: { file: "npcSidney.png", frames: 1, frameDelay: 10, position: [5, 157]},
-            bert: { file: "npcBert.png", frames: 1, frameDelay: 10, position: [208, 149]},
-            axel: { file: "npcAxel.png", frames: 1, frameDelay: 10, position: [191, 148]},
+            sidney: { file: "npcSidney.png", label: "Sidney", frames: 1, frameDelay: 10, position: [5, 157]},
+            bert: { file: "npcBert.png", label: "Bert", frames: 1, frameDelay: 10, position: [208, 148]},
+            axel: { file: "npcAxel.png", label: "Axel", frames: 1, frameDelay: 10, position: [189, 149]},
         }
     },
 
@@ -57,7 +57,7 @@ module.exports.ROOMS =
 
         },
 
-        things: 
+        things:
         {
             barChair1: { file: "dBsBarChair.png", frames: 1, frameDelay: 10, position: [185, 68]},
             barChair2: { file: "dBsBarChair.png", frames: 1, frameDelay: 10, position: [187, 88]},
@@ -70,11 +70,11 @@ module.exports.ROOMS =
             plant: { file: "dBsBarPlant.png", frames: 1, frameDelay: 10, position: [2, 154]},
             shopAndPlant: { file: "dBsBarShopAndPlant.png", frames: 1, frameDelay: 10, position: [197, 34]},
 
-            andre: { file: "npcAndre.png", frames: 1, frameDelay: 10, position: [223, 61]},
-            kyon: { file: "npcKyon.png", frames: 1, frameDelay: 10, position: [226, 85]},
-            sander: { file: "npcSander.png", frames: 1, frameDelay: 10, position: [219, 101]},
-            nick: { file: "npcNick.png", frames: 1, frameDelay: 10, position: [222, 137]},
-            jeroen: { file: "npcJeroen.png", frames: 1, frameDelay: 10, position: [51, 48]},
+            andre: { file: "npcAndre.png", frames: 1, label: "Andre", frameDelay: 10, position: [223, 61]},
+            kyon: { file: "npcKyon.png", frames: 1, label: "Kyon", frameDelay: 10, position: [229, 85]},
+            sander: { file: "npcSander.png", frames: 1, label: "Sander", frameDelay: 10, position: [219, 101]},
+            nick: { file: "npcNick.png", frames: 1, label: "Nick", frameDelay: 10, position: [222, 137]},
+            jeroen: { file: "npcJeroen.png", frames: 1, label: "Jeroen", frameDelay: 10, position: [49, 48]},
         }
     },
 
@@ -95,7 +95,7 @@ module.exports.ROOMS =
             h00ffbc: { cmd: "enter", room: "dBsBar", label: "Bar", point: [156, 184], enterPoint: [156, 30], obstacle: false },
         },
 
-        things: 
+        things:
         {
             brownChairSide1: { file: "dBsLobbyBrownChairSide.png", frames: 1, frameDelay: 10, position: [222, 128]},
             brownChairFront1: { file: "dBsLobbyBrownChairFront.png", frames: 1, frameDelay: 10, position: [188, 97]},
@@ -115,9 +115,9 @@ module.exports.ROOMS =
             redTable: { file: "dBsLobbyRedTable.png", frames: 1, frameDelay: 10, position: [146, 140]},
             yellowTable: { file: "dBsLobbyYellowTable.png", frames: 1, frameDelay: 10, position: [103, 97]},
 
-            renata: { file: "npcRenata.png", frames: 1, frameDelay: 10, position: [187, 39]},
-            bas: { file: "npcBas.png", frames: 1, frameDelay: 10, position: [32, 83]},
-            anne: { file: "npcAnne.png", frames: 1, frameDelay: 10, position: [30, 48]},
+            renata: { file: "npcRenata.png", label: "Renata", frames: 1, frameDelay: 10, position: [32, 83]},
+            bas: { file: "npcBas.png", label: "Bas", frames: 1, frameDelay: 10, position: [186, 53]},
+            anne: { file: "npcAnne.png", label: "Anne", frames: 1, frameDelay: 10, position: [223, 170]},
         }
     },
 
@@ -136,7 +136,7 @@ module.exports.ROOMS =
             //h will be replaced by #
             hff0000: { cmd: "enter", room: "dBsLobby", label: "Lobby", point: [128,189], enterPoint: [50,35], obstacle: false },
         },
-        things: 
+        things:
         {
             picnicTable1: { file: "dBsBeerGartenPicknictable1.png", frames: 1, frameDelay: 10, position: [193,82], obstacle: true},
             picnicTable2: { file: "dBsBeerGartenPicknictable2.png", frames: 1, frameDelay: 10, position: [13,114], obstacle: true},
@@ -149,12 +149,12 @@ module.exports.ROOMS =
             poleLights: { file: "dBsBeerGartenPoleLIGHTS.png", frames: 1, frameDelay: 10, position: [0, 0]},
             fence: { file: "dBsBeerGartenFence.png", frames: 1, frameDelay: 10, position: [0,158]},
 
-            james: { file: "npcJames.png", frames: 1, frameDelay: 10, position: [192, 153]},
-            evert: { file: "npcEvert.png", frames: 1, frameDelay: 10, position: [207, 152]},
-            robert: { file: "npcRobert.png", frames: 1, frameDelay: 10, position: [223, 162]},
-            paul: { file: "npcPaul.png", frames: 1, frameDelay: 10, position: [129, 88]},
-            tristan: { file: "npcTristan.png", frames: 1, frameDelay: 10, position: [234, 117]},
-            jos: { file: "npcJos.png", frames: 1, frameDelay: 10, position: [225, 100]},
+            james: { file: "npcJames.png", label: "James", frames: 1, frameDelay: 10, position: [192, 154]},
+            evert: { file: "npcEvert.png", label: "Evert", frames: 1, frameDelay: 10, position: [211, 152]},
+            robert: { file: "npcRobert.png", label: "Robert", frames: 1, frameDelay: 10, position: [227, 162]},
+            paul: { file: "npcPaul.png", label: "Paul", frames: 1, frameDelay: 10, position: [128, 88]},
+            tristan: { file: "npcTristan.png", label: "Tristan", frames: 1, frameDelay: 10, position: [61, 133]},
+            jos: { file: "npcJos.png", label: "Jos", frames: 1, frameDelay: 10, position: [234, 117]},
         }
     },
 
@@ -180,8 +180,8 @@ module.exports.ROOMS =
             hallLamp: { file: "dBsHallLamp.png", frames: 1, frameDelay: 10, position: [102, 0]},
             hallRedLamp: { file: "dBsHallRedLamp.png", frames: 1, frameDelay: 10, position: [144, 133]},
 
-            jimmy: { file: "npcJimmy.png", frames: 1, frameDelay: 10, position: [100, 142]},
-            vincent: { file: "npcVincent.png", frames: 1, frameDelay: 10, position: [137, 142]},
+            jimmy: { file: "npcJimmy.png", label: "Jimmy", frames: 1, frameDelay: 10, position: [148, 54]},
+            vincent: { file: "npcVincent.png", label: "Vincent", frames: 1, frameDelay: 10, position: [101, 142]},
         }
     },
 
