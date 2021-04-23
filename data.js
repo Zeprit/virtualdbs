@@ -71,7 +71,7 @@ module.exports.ROOMS =
             shopAndPlant: { file: "dBsBarShopAndPlant.png", frames: 1, frameDelay: 10, position: [197, 34]},
 
             andre: { file: "npcAndre.png", frames: 1, label: "Andre", frameDelay: 10, position: [223, 61]},
-            kyon: { file: "npcKyon.png", frames: 1, label: "Kyon", frameDelay: 10, position: [233, 86]},
+            kyon: { file: "npcKyon.png", frames: 1, label: "Kyon", frameDelay: 10, position: [234, 87]},
             sander: { file: "npcSander.png", frames: 1, label: "Sander", frameDelay: 10, position: [219, 101]},
             nick: { file: "npcNick.png", frames: 1, label: "Nick", frameDelay: 10, position: [222, 137]},
             jeroen: { file: "npcJeroen.png", frames: 1, label: "Jeroen", frameDelay: 10, position: [49, 48]},
