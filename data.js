@@ -26,7 +26,8 @@ module.exports.ROOMS =
             //h will be replaced by #
             hff0000: { cmd: "enter", room: "dBsBar", label: "Bar", point: [243, 144], enterPoint: [94, 74], obstacle: false },
         },
-        things: {
+        things: 
+        {
 
         }
     },
@@ -53,8 +54,19 @@ module.exports.ROOMS =
             h0000ff: { cmd: "text", url: "https://www.dbstudio.nl/concerten/", label: "Programma", txt: "Klik of Tik op dit bericht om te kijken wat voor bands of evenementen er aan komen!", align: "center", lines: 3, point: [59,66] },
 
         },
-        things: {
+        
+        things: 
+        {
+            barChair1: { file: "dBsBarChair.png", frames: 1, frameDelay: 10, position: [185, 68]},
+            barChair2: { file: "dBsBarChair.png", frames: 1, frameDelay: 10, position: [187, 88]},
+            barChair3: { file: "dBsBarChair.png", frames: 1, frameDelay: 10, position: [184, 100]},
+            barChair4: { file: "dBsBarChair.png", frames: 1, frameDelay: 10, position: [188, 119]},
+            barChair5: { file: "dBsBarChair.png", frames: 1, frameDelay: 10, position: [184, 137]},
+            barChair6: { file: "dBsBarChair.png", frames: 1, frameDelay: 10, position: [186, 155]},
 
+            lampAndPlant: { file: "dBsBarLampAndPlant.png", frames: 1, frameDelay: 10, position: [119, 0]},
+            plant: { file: "dBsBarPlant.png", frames: 1, frameDelay: 10, position: [2, 154]},
+            shopAndPlant: { file: "dBsBarShopAndPlant.png", frames: 1, frameDelay: 10, position: [197, 34]},
         }
     },
 
@@ -74,8 +86,26 @@ module.exports.ROOMS =
             hff0000: { cmd: "enter", room: "dBsBeerGarten", label: "Beer Garten", point: [50,35], enterPoint: [128,189], obstacle: false },
             h00ffbc: { cmd: "enter", room: "dBsBar", label: "Bar", point: [156, 184], enterPoint: [156, 30], obstacle: false },
         },
-        things: {
 
+        things: 
+        {
+            brownChairSide1: { file: "dBsLobbyBrownChairSide.png", frames: 1, frameDelay: 10, position: [222, 128]},
+            brownChairFront1: { file: "dBsLobbyBrownChairFront.png", frames: 1, frameDelay: 10, position: [188, 97]},
+            brownChairFront2: { file: "dBsLobbyBrownChairFront.png", frames: 1, frameDelay: 10, position: [231, 79]},
+            brownChairBack1: { file: "dBsLobbyBrownChairBack.png", frames: 1, frameDelay: 10, position: [152, 151]},
+            brownChairBack2: { file: "dBsLobbyBrownChairBack.png", frames: 1, frameDelay: 10, position: [236, 106]},
+            brownChairBack3: { file: "dBsLobbyBrownChairBack.png", frames: 1, frameDelay: 10, position: [245, 132]},
+            brownChairBack4: { file: "dBsLobbyBrownChairBack.png", frames: 1, frameDelay: 10, position: [243, 158]},
+
+            yellowChairFront1: { file: "dBsLobbyYellowChairFront.png", frames: 1, frameDelay: 10, position: [153, 127]},
+            whiteChairBack1: { file: "dBsLobbyWhiteChairBack.png", frames: 1, frameDelay: 10, position: [191, 119]},
+            whiteChairSide1: { file: "dBsLobbyWhiteChairSide.png", frames: 1, frameDelay: 10, position: [96, 102]},
+            whiteChairSide2: { file: "dBsLobbyWhiteChairSide1.png", frames: 1, frameDelay: 10, position: [124, 101]},
+
+            lamps: { file: "dBsLobbyLamps.png", frames: 1, frameDelay: 10, position: [0, 0]},
+            pinkTable: { file: "dBsLobbyPinkTable.png", frames: 1, frameDelay: 10, position: [185, 108]},
+            redTable: { file: "dBsLobbyRedTable.png", frames: 1, frameDelay: 10, position: [146, 140]},
+            yellowTable: { file: "dBsLobbyYellowTable.png", frames: 1, frameDelay: 10, position: [103, 97]},
         }
     },
 
