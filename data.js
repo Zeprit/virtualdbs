@@ -2,7 +2,7 @@
 //they are either related to the rooms or shared with the server
 module.exports.SETTINGS = {
     //if not specified by the url where is the starting point
-    defaultRoom: "MOOOVDesert1",
+    defaultRoom: "dBsBar",
     //minimum time between talk messages enforced by both client and server
     ANTI_SPAM: 1000,
     //shows up at first non lurking login
@@ -11,222 +11,66 @@ module.exports.SETTINGS = {
 
 module.exports.ROOMS =
 {
-    MOOOVDesert1:
-    {
-        bg: "mooovdesert.png",
-        area: "mooovdesert_areas.png",
-
-        frames: 24,
-        frameDelay: 30,
-        avatarScale: 2,
-        pageBg: "#011221",
-        music: "MOOOV_Ambience_Desert_v2.mp3",
-        tint: "#ffffff",
-        bubblesY: 44,
-        tYOffset: -100,
-        spawn: [118, 144, 193, 182],
-
-        areaColors:
-        {
-            //Desert1 to Ghost cinema
-            h2fc465: { cmd: "enter", room: "MOOOVLobby", label: "Cinema", point: [63, 121], enterPoint: [127, 193], obstacle: true },
-            //Desert1 to Open-air cinema
-            hff0000: { cmd: "enter", room: "MOOOVOpenAirCinema", label: "Open-air Cinema", point: [245, 144], enterPoint: [7, 144], obstacle: false },
-
-            //Crashed plane
-            h2f7ac4: { cmd: "text", label: "Plane crash", align: "center", lines: 1 },
-
-            //Use this for Quest1 object
-            //h00eeff: { cmd: "quest3", label: "Quest3 Item", txt: "You find an ancient slab, its carved symbols faded from many years of sandstorms. You give it a brush with your hand and a plume of dust arises. Upon closer inspection you make out... the cinema structure, a lever and some sort of treasure? Perhaps there's still another secret to discover...", align: "center", lines: 4, point: [77,129], obstacle: true},
-        },
-
-        things:
-        {
-            indianajones: { file: "indianajones-cold.png", frames: 1, frameDelay: 10, position: [149, 111], label: "Indiana Jones", command: { cmd: "text", txt: "Indiana Jones:\nBrrrr, I feel a breeze picking up. Could you light that fire for me?", align: "left", lines: 5, point: [144, 147] } },
-            campfire: { file: "mooovfire-off.png", frames: 1, frameDelay: 10, position: [150, 150], label: "Campfire", command: { cmd: "lightcampfire", txt: "placeholder", align: "left", lines: 5, point: [138, 174] } },
-            cactus: { file: "mooovcactus.png", frames: 1, frameDelay: 20, position: [195, 145], label: "A Normal Cactus", command: { cmd: "text", txt: "Just a normal cactus.", align: "left", lines: 5, point: [183, 188] } },
-            mooovsign: { file: "mooovfronthillsign.png", frames: 1, frameDelay: 10, position: [0, 163]},
-
-            loadcampfire: { file: "mooovfire.png", frames: 8, visible: false, position: [500, 500]},
-            loadindiana: { file: "indianajones.png", frames: 1, visible: false, position: [500, 500]},
-            loadcactus: { file: "mooovcactus-eyes.png", frames: 7, frameDelay: 20, visible: false, position: [500, 500]},
-        }
-   },
-
-    MOOOVOpenAirCinema:
-    {
-        bg: "mooovopenaircinema.png",
-        area: "mooovopenaircinema_areas.png",
-
+        dBsZaal: {
+        bg: "dBsZaal.png",
         frames: 1,
         frameDelay: 30,
         avatarScale: 2,
-        pageBg: "#011221",
-        tint: "#ffffff",
-        bubblesY: 170,
-        tYOffset: 72,
-        spawn: [95, 138, 144, 158],
-
-        areaColors:
-        {
-            //Open-air cinema to Desert1
-            hff0000: { cmd: "enter", room: "MOOOVDesert1", label: "Desert", point: [6, 144], enterPoint: [247, 143], obstacle: false },
-        },
-
-        things:
-        {
-            monster: { file: "mooovster-withglasses.png", frames: 4, frameDelay: 10, position: [213, 125], label: "Monster", command: { cmd: "monster1", txt: "placeholder", align: "left", lines: 5, point: [204, 160] } },
-            chairs1: { file: "mooovopenairchairs2.png", frames: 1, frameDelay: 10, position: [55, 152] },
-            chairs2: { file: "mooovopenairchairs1.png", frames: 1, frameDelay: 10, position: [55, 172] },
-
-            loadmonster: { file: "mooovster-withgem.png", frames: 7, frameDelay: 20, visible: false, position: [500, 500]},
-        }
-    },
-
-    MOOOVLobby:
-    {
-        bg: "mooovlobby.png",
-        area: "mooovlobby_areas.png",
-
-        frames: 1,
-        frameDelay: 30,
-        avatarScale: 2,
-        pageBg: "#011221",
-        tint: "#ffffff",
-        music: "MOOOV_Ambience_Cinema_v2.mp3",
-        bubblesY: 44,
-        tYOffset: -100,
-        spawn: [95, 138, 144, 158],
-
-        areaColors:
-        {
-            //Lobby to Desert1
-            h2f7ac4: { cmd: "enter", room: "MOOOVDesert1", label: "Desert", point: [128, 199], enterPoint: [63, 121], obstacle: false },
-            //Lobby to Corridor
-            hff0000: { cmd: "enter", room: "MOOOVCorridor", label: "Corridor", point: [208, 120], enterPoint: [7, 120], obstacle: true },
-            h0082ff: { cmd: "text", label: "Shopkeeper Esmée", txt: "I am just a simple shopkeeper, and not at all looking for that ancient treasure...\nMooov along, please.", align: "left", lines: 5, point: [124, 120], obstacle: true },
-            //shop
-            hffc400: { cmd: "text", url: "https://www.mooov.be/nl/pQ1LvFP/festivalshop", label: "Webshop", txt: "Get some goods and support MOOOV!\n\nClick or Tap on this box to visit the store", align: "center", lines: 5, point: [119, 120],obstacle: true },
-            //program
-            //h23cbb3: { cmd: "text", url: "https://www.mooov.be/nl/agenda/themas/15/kijk_nu/", label: "Program", txt: "The MOOOV film program\n\nClick or Tap on this box to visit the website", align: "center", lines: 4, point: [77,129],obstacle: true},
-            //tickets
-            //h2525c2: { cmd: "text", url: "", label: "Tickets", txt: "Get your MOOOV tickets here\n\nClick or Tap on this box to visit the ticket store", align: "center", lines: 4, point: [228,160],obstacle: true},
-
-            //posters
-            //hdc2626: { cmd: "nothing", label: "Kuessipan", align: "center", lines: 1 },
-            //h266cdc: { cmd: "text", label: "The Dilemma of Desire", align: "center", lines: 1},
-            //hdc26a0: { cmd: "text", label: "Needle Park Baby", align: "center", lines: 1},
-        },
-
-        things:
-        {
-            lobbyghost1: { file: "mooovGhost1.png", frames: 4, frameDelay: 30, position: [12, 94], visible: false },
-            lobbyghost2: { file: "mooovGhost3.png", frames: 4, frameDelay: 27, position: [90, 140], visible: false },
-            lobbyghost3: { file: "mooovGhost5.png", frames: 4, frameDelay: 32, position: [111, 139], visible: false },
-            lobbyghost4: { file: "mooovGhost4.png", frames: 4, frameDelay: 34, position: [22, 157], visible: false },
-            lobbyghost5: { file: "mooovGhost1.png", frames: 4, frameDelay: 25, position: [182, 85], visible: false },
-            lobbyghost6: { file: "mooovGhost1.png", frames: 4, frameDelay: 37, position: [199, 128], visible: false },
-        }
-    },
-
-    MOOOVCorridor:
-    {
-        bg: "mooovcorridor.png",
-        area: "mooovcorridor_areas.png",
-
-        frames: 1,
-        frameDelay: 30,
-        avatarScale: 2,
-        tint: "#ffffff",
-        pageBg: "#170102",
-        music: "MOOOV_Ambience_Corridor_v2.mp3",
-        bubblesY: 170,
-        tYOffset: -100,
-        spawn: [116, 166, 140, 176],
-
-        areaColors:
-        {
-            //Corridor to Ghost Cinema Lobby
-            h2f7ac4: { cmd: "enter", room: "MOOOVLobby", label: "Lobby", point: [6, 122], enterPoint: [208, 117], obstacle: false },
-            //Corridor to Theater1
-            hffc400: { cmd: "enter", room: "MOOOVTheater1", label: "Theater 1", point: [166, 115], enterPoint: [127, 196], obstacle: true },
-            hff3500: { cmd: "text", url: "https://www.moooviefy.be/", label: "Last Action Hero", txt: "Click here to get some Mooovie recommendations!", align: "left", lines: 3, point: [132, 113], obstacle: true },
-
-            h6c4bca: { cmd: "text", label: "Send Me To The Clouds", align: "left", lines: 1, obstacle: true },
-            h4b9eca: { cmd: "text", label: "Waiting For The Carnival", align: "left", lines: 1, obstacle: true },
-
-
-            //Corridor to Secret Room
-            hff0000: { cmd: "text", room: "MOOOVSecretRoom", label: "???", txt: "You sense a strange presence here...", align: "left", lines: 3, point: [94, 111], enterPoint: [126, 142], obstacle: false },
-        },
-
-        things:
-        {
-            ghostdoor: { file: "mooovghostdoor.png", frames: 28, frameDelay: 10, position: [82, 73], visible: false },
-            corridorghost1: { file: "mooovGhost2.png", frames: 4, frameDelay: 30, position: [133, 79], visible: false },
-            corridorghost2: { file: "mooovGhost4.png", frames: 4, frameDelay: 27, position: [68, 92], visible: false },
-            corridorghost3: { file: "mooovGhost5.png", frames: 4, frameDelay: 34, position: [225, 95], visible: false },
-        }
-    },
-
-    MOOOVTheater1:
-    {
-        bg: "mooovtheater.png",
-        area: "mooovtheater_areas.png",
-
-        frames: 1,
-        frameDelay: 30,
-        avatarScale: 2,
+        area: "dBsZaal-areas.png",
         tint: "#ffffff",
         pageBg: "#170102",
         bubblesY: 170,
-        tYOffset: 72,
-        spawn: [116,166,140,176],
-
-        areaColors:
-        {
-            //Theater1 to Corridor
-            hff0000: { cmd: "enter", room: "MOOOVCorridor", label: "Corridor", point: [127, 195], enterPoint: [166, 118], obstacle: false },
+        spawn: [72, 90, 173, 152],
+        areaColors: {
+            //h will be replaced by #
+            hed008c: { cmd: "enter", room: "dBsBar", label: "Bar", point: [247, 136], enterPoint: [94, 74], obstacle: false },
         },
+        things: {
 
-        things:
-        {
-            gem: { file: "thegem.png", frames: 10, frameDelay: 10, position: [500, 500], label: "Gem", command: { cmd: "pickupgem_nomonster", txt: "placeholder", align: "left", lines: 5, point: [24, 120] }, visible: false },
-            chairs1: { file: "mooovtheaterchairs1.png", frames: 1, frameDelay: 10, position: [55, 120] },
-            chairs2: { file: "mooovtheaterchairs2.png", frames: 1, frameDelay: 10, position: [30, 140] },
-            chairs3: { file: "mooovtheaterchairs3.png", frames: 1, frameDelay: 10, position: [55, 160] },
-            stackedchairs: { file: "mooovtheaterstackedchairs.png", frames: 1, frameDelay: 10, position: [242, 109] },
-            singlechair: { file: "mooovtheatersinglechair.png", frames: 1, frameDelay: 10, position: [5, 171] },
-
-            theater1ghost1: { file: "mooovGhost2.png", frames: 4, frameDelay: 28, position: [227, 138], visible: false },
-            theater1ghost2: { file: "mooovGhost3.png", frames: 4, frameDelay: 34, position: [34, 98], visible: false },
         }
     },
 
-    MOOOVSecretRoom:
-    {
-        bg: "mooovsecretroom.png",
-        frames: 2,
+    dBsBar: {
+        bg: "dBsBar.png",
+        frames: 1,
         frameDelay: 30,
         avatarScale: 2,
-        area: "mooovsecretroom_areas.png",
+        area: "dBsBar-areas.png",
         tint: "#ffffff",
-        music: "MOOOV_CouponRoom_v1.mp3",
-        pageBg: "#021213",
-        bubblesY: 44,
-        tYOffset: 0,
-        spawn: [96, 127, 153, 145],
+        pageBg: "#170102",
+        bubblesY: 45,
+        spawn: [72, 90, 173, 152],
+        areaColors: {
+            //h will be replaced by #
+            hff00ff: { cmd: "enter", room: "dBsZaal", label: "Zaal", point: [94, 68], enterPoint: [234, 136], obstacle: true },
+            hffff00: { cmd: "enter", room: "dBsLobby", label: "Lobby", point: [156, 26], enterPoint: [156, 178], obstacle: false },
+            h00ff00: { cmd: "text", url: "https://shop.dbstudio.nl/", label: "dBs Shop", txt: "Voor alle dBs merchandise, of zo een heerlijk drankje!\n\nKlik of Tik op dit bericht om de winkel te bezoeken.", align: "center", lines: 5, point: [183,70] },
+            hff0000: { cmd: "text", url: "https://portal.dbstudio.nl/", label: "Reserveringen", txt: "Wil je komen repeteren in onze toffe oefenstudios?\n\nKlik of Tik op dit bericht.", align: "center", lines: 4, point: [189,149] },
+            h0000ff: { cmd: "text", url: "https://www.dbstudio.nl/concerten/", label: "Programma", txt: "Klik of Tik op dit bericht om te kijken wat voor bands of evenementen er aan komen!", align: "center", lines: 3, point: [59,66] },
 
-        areaColors:
-        {
-            hff0000: { cmd: "enter", room: "MOOOVCorridor", label: "Corridor", point: [126, 142], enterPoint: [92, 116], obstacle: false },
-            h0080ff: { cmd: "getcoupon", url: "https://online.mooov.be/festival/", label: "Treasure", txt: "placeholder", align: "left", lines: 5, point: [126, 129], obstacle: false },
         },
+        things: {
 
-        things:
-        {
-            //coupon: { file: "familyRoom-couch1.png", frames: 1, frameDelay: 10, position: [225, 123], label: "Coupon", command: { cmd: "getcoupon", txt: "placeholder", align: "left", lines: 5, point: [228, 163] } },
+        }
+    },
+
+    dBsLobby: {
+        bg: "dBsLobby.png",
+        frames: 1,
+        frameDelay: 30,
+        avatarScale: 2,
+        area: "dBsLobby-areas.png",
+        tint: "#ffffff",
+        pageBg: "#170102",
+        bubblesY: 45,
+        spawn: [72, 90, 173, 152],
+        areaColors: {
+            //h will be replaced by #
+            hffff00: { cmd: "enter", room: "dBsBar", label: "Bar", point: [158, 190], enterPoint: [158, 32], obstacle: false },
         },
+        things: {
+
+        }
     },
 
 
