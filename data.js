@@ -11,19 +11,20 @@ module.exports.SETTINGS = {
 
 module.exports.ROOMS =
 {
-        dBsZaal: {
-        bg: "dBsZaal.png",
+      dBsZaal: {
+        bg: "dBsStageBG.png",
         frames: 1,
         frameDelay: 30,
         avatarScale: 2,
-        area: "dBsZaal-areas.png",
+        area: "dBsStage_areas.png",
         tint: "#ffffff",
         pageBg: "#170102",
         bubblesY: 170,
-        spawn: [72, 90, 173, 152],
+        tYOffset: 0,
+        spawn: [37, 133, 223, 184],
         areaColors: {
             //h will be replaced by #
-            hed008c: { cmd: "enter", room: "dBsBar", label: "Bar", point: [247, 136], enterPoint: [94, 74], obstacle: false },
+            hff0000: { cmd: "enter", room: "dBsBar", label: "Bar", point: [243, 144], enterPoint: [94, 74], obstacle: false },
         },
         things: {
 
@@ -39,13 +40,15 @@ module.exports.ROOMS =
         tint: "#ffffff",
         pageBg: "#170102",
         bubblesY: 45,
-        spawn: [72, 90, 173, 152],
+        tYOffset: 0,
+        spawn: [66, 98, 168, 147],
         areaColors: {
             //h will be replaced by #
             hff0000: { cmd: "enter", room: "dBsZaal", label: "Zaal", point: [94, 68], enterPoint: [234, 140], obstacle: true },
+            hff4500: { cmd: "enter", room: "dBsZaal", label: "Zaal", point: [94, 68], enterPoint: [234, 140], obstacle: false },
             hff7700: { cmd: "enter", room: "dBsLobby", label: "Lobby", point: [156, 26], enterPoint: [156, 182], obstacle: false },
             h00ffbc: { cmd: "enter", room: "dBsHall", label: "Hall", point: [128,190], enterPoint: [127,34], obstacle: false },
-            h1400ff: { cmd: "text", url: "https://shop.dbstudio.nl/", label: "dBs Shop", txt: "Voor alle dBs merchandise, of zo een heerlijk drankje!\n\nKlik of Tik op dit bericht om de winkel te bezoeken.", align: "center", lines: 5, point: [183,70] },
+            h1400ff: { cmd: "text", url: "https://shop.dbstudio.nl/", label: "dBs Shop", txt: "Voor alle dBs merchandise, of zo een heerlijk drankje!\n\nKlik of Tik op dit bericht om de winkel te bezoeken.", align: "center", lines: 5, point: [183,64] },
             //hff0000: { cmd: "text", url: "https://portal.dbstudio.nl/", label: "Reserveringen", txt: "Wil je komen repeteren in onze toffe oefenstudios?\n\nKlik of Tik op dit bericht.", align: "center", lines: 4, point: [189,149] },
             h0000ff: { cmd: "text", url: "https://www.dbstudio.nl/concerten/", label: "Programma", txt: "Klik of Tik op dit bericht om te kijken wat voor bands of evenementen er aan komen!", align: "center", lines: 3, point: [59,66] },
 
@@ -64,7 +67,8 @@ module.exports.ROOMS =
         tint: "#ffffff",
         pageBg: "#170102",
         bubblesY: 45,
-        spawn: [72, 90, 173, 152],
+        tYOffset: 0,
+        spawn: [141, 102, 181, 121],
         areaColors: {
             //h will be replaced by #
             hff0000: { cmd: "enter", room: "dBsBeerGarten", label: "Beer Garten", point: [50,35], enterPoint: [128,189], obstacle: false },
@@ -74,7 +78,7 @@ module.exports.ROOMS =
 
         }
     },
-    
+
     dBsBeerGarten: {
         bg: "dBsBeerGartenBG.png",
         frames: 1,
@@ -84,7 +88,8 @@ module.exports.ROOMS =
         tint: "#ffffff",
         pageBg: "#170102",
         bubblesY: 45,
-        spawn: [72, 90, 173, 152],
+        tYOffset: 0,
+        spawn: [110, 150, 173, 180],
         areaColors: {
             //h will be replaced by #
             hff0000: { cmd: "enter", room: "dBsLobby", label: "Lobby", point: [128,189], enterPoint: [50,35], obstacle: false },
@@ -103,20 +108,21 @@ module.exports.ROOMS =
         tint: "#ffffff",
         pageBg: "#170102",
         bubblesY: 45,
-        spawn: [72, 90, 173, 152],
-        areaColors: 
+        tYOffset: 0,
+        spawn: [102, 26, 153, 113],
+        areaColors:
         {
             //h will be replaced by #
             hff0000: { cmd: "enter", room: "dBsBar", label: "Bar", point: [127,13], enterPoint: [127,186], obstacle: false },
             hff7700: { cmd: "text", url: "https://portal.dbstudio.nl/", label: "Reserveringen", txt: "Wil je komen repeteren in onze toffe oefenstudios?\n\nKlik of Tik op dit bericht.", align: "center", lines: 4, point: [126,130], obstacle: true },
         },
-        things: 
+        things:
         {
             hallLamp: { file: "dBsHallLamp.png", frames: 1, frameDelay: 10, position: [105, 0]},
             hallRedLamp: { file: "dBsHallRedLamp.png", frames: 1, frameDelay: 10, position: [144, 133]},
         }
     },
- 
+
 
 
 /*
