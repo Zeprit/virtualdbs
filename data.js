@@ -28,9 +28,9 @@ module.exports.ROOMS =
         },
         things: 
         {
-            sidney: { file: "npcSidney.png", frames: 1, frameDelay: 10, position: [10, 174]},
-            bert: { file: "npcBert.png", frames: 1, frameDelay: 10, position: [191, 168]},
-            axel: { file: "npcAxel.png", frames: 1, frameDelay: 10, position: [208, 169]},
+            sidney: { file: "npcSidney.png", frames: 1, frameDelay: 10, position: [5, 157]},
+            bert: { file: "npcBert.png", frames: 1, frameDelay: 10, position: [208, 149]},
+            axel: { file: "npcAxel.png", frames: 1, frameDelay: 10, position: [191, 148]},
         }
     },
 
@@ -117,6 +117,7 @@ module.exports.ROOMS =
 
             renata: { file: "npcRenata.png", frames: 1, frameDelay: 10, position: [187, 39]},
             bas: { file: "npcBas.png", frames: 1, frameDelay: 10, position: [32, 83]},
+            anne: { file: "npcAnne.png", frames: 1, frameDelay: 10, position: [30, 48]},
         }
     },
 
@@ -152,6 +153,8 @@ module.exports.ROOMS =
             evert: { file: "npcEvert.png", frames: 1, frameDelay: 10, position: [207, 152]},
             robert: { file: "npcRobert.png", frames: 1, frameDelay: 10, position: [223, 162]},
             paul: { file: "npcPaul.png", frames: 1, frameDelay: 10, position: [129, 88]},
+            tristan: { file: "npcTristan.png", frames: 1, frameDelay: 10, position: [129, 88]},
+            jos: { file: "npcJos.png", frames: 1, frameDelay: 10, position: [211, 121]},
         }
     },
 
