@@ -24,7 +24,7 @@ module.exports.ROOMS =
         spawn: [72, 90, 173, 152],
         areaColors: {
             //h will be replaced by #
-            hed008c: { cmd: "enter", room: "dBsBar", label: "Bar", point: [247, 136], enterPoint: [94, 74], obstacle: false },
+            hff0000: { cmd: "enter", room: "dBsBar", label: "Bar", point: [247, 136], enterPoint: [94, 74], obstacle: false },
         },
         things: {
 
