@@ -173,7 +173,7 @@ module.exports.ROOMS =
         {
             //h will be replaced by #
             hff0000: { cmd: "enter", room: "dBsBar", label: "Bar", point: [127,13], enterPoint: [127,186], obstacle: false },
-            hff7700: { cmd: "text", url: "https://portal.dbstudio.nl/", label: "Reserveringen", txt: "Wil je komen repeteren in onze toffe oefenstudios?\n\nKlik of Tik op dit bericht.", align: "center", lines: 4, point: [126,130], obstacle: true },
+            hff7700: { cmd: "text", url: "https://portal.dbstudio.nl/", label: "Reserveringen", txt: "Wil je komen repeteren in onze toffe oefenstudios?\n\nKlik of Tik op dit bericht.", align: "center", lines: 4, point: [126, 140], obstacle: true },
         },
         things:
         {
