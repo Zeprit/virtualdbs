@@ -166,6 +166,8 @@ module.exports.ROOMS =
         {
             hallLamp: { file: "dBsHallLamp.png", frames: 1, frameDelay: 10, position: [105, 0]},
             hallRedLamp: { file: "dBsHallRedLamp.png", frames: 1, frameDelay: 10, position: [144, 133]},
+
+            jimmy: { file: "npcJimmy.png", frames: 1, frameDelay: 10, position: [100, 142]},
         }
     },
 
