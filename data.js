@@ -68,7 +68,7 @@ module.exports.ROOMS =
         areaColors: {
             //h will be replaced by #
             hff0000: { cmd: "enter", room: "dBsBeerGarten", label: "Beer Garten", point: [50,35], enterPoint: [128,189], obstacle: false },
-            h00ffbc: { cmd: "enter", room: "dBsBar", label: "Bar", point: [156, 184], enterPoint: [156, 26], obstacle: false },
+            h00ffbc: { cmd: "enter", room: "dBsBar", label: "Bar", point: [156, 184], enterPoint: [156, 30], obstacle: false },
         },
         things: {
 
