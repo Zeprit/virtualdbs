@@ -28,7 +28,9 @@ module.exports.ROOMS =
         },
         things: 
         {
-
+            sidney: { file: "npcSidney.png", frames: 1, frameDelay: 10, position: [10, 174]},
+            bert: { file: "npcBert.png", frames: 1, frameDelay: 10, position: [191, 168]},
+            axel: { file: "npcAxel.png", frames: 1, frameDelay: 10, position: [208, 169]},
         }
     },
 
@@ -144,6 +146,7 @@ module.exports.ROOMS =
             torch2: { file: "dBsBeerGartenTorch.png", frames: 4, frameDelay: 10, position: [75,156]},
             pole: { file: "dBsBeerGartenPole.png", frames: 1, frameDelay: 10, position: [112, 0]},
             poleLights: { file: "dBsBeerGartenPoleLIGHTS.png", frames: 1, frameDelay: 10, position: [0, 0]},
+            fence: { file: "dBsBeerGartenFence.png", frames: 1, frameDelay: 10, position: [0,158]},
 
             james: { file: "npcJames.png", frames: 1, frameDelay: 10, position: [192, 153]},
             evert: { file: "npcEvert.png", frames: 1, frameDelay: 10, position: [207, 152]},
@@ -175,6 +178,7 @@ module.exports.ROOMS =
             hallRedLamp: { file: "dBsHallRedLamp.png", frames: 1, frameDelay: 10, position: [144, 133]},
 
             jimmy: { file: "npcJimmy.png", frames: 1, frameDelay: 10, position: [100, 142]},
+            vincent: { file: "npcVincent.png", frames: 1, frameDelay: 10, position: [137, 142]},
         }
     },
 
