@@ -46,7 +46,7 @@ module.exports.ROOMS =
             hff7700: { cmd: "enter", room: "dBsLobby", label: "Lobby", point: [156, 26], enterPoint: [156, 184], obstacle: false },
             h00ffbc: { cmd: "enter", room: "dBsHall", label: "Hall", point: [128,190], enterPoint: [127,11], obstacle: false },
             h1400ff: { cmd: "text", url: "https://shop.dbstudio.nl/", label: "dBs Shop", txt: "Voor alle dBs merchandise, of zo een heerlijk drankje!\n\nKlik of Tik op dit bericht om de winkel te bezoeken.", align: "center", lines: 5, point: [183,70] },
-            hff0000: { cmd: "text", url: "https://portal.dbstudio.nl/", label: "Reserveringen", txt: "Wil je komen repeteren in onze toffe oefenstudios?\n\nKlik of Tik op dit bericht.", align: "center", lines: 4, point: [189,149] },
+            //hff0000: { cmd: "text", url: "https://portal.dbstudio.nl/", label: "Reserveringen", txt: "Wil je komen repeteren in onze toffe oefenstudios?\n\nKlik of Tik op dit bericht.", align: "center", lines: 4, point: [189,149] },
             h0000ff: { cmd: "text", url: "https://www.dbstudio.nl/concerten/", label: "Programma", txt: "Klik of Tik op dit bericht om te kijken wat voor bands of evenementen er aan komen!", align: "center", lines: 3, point: [59,66] },
 
         },
