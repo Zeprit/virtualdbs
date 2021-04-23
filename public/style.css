@@ -123,7 +123,7 @@ canvas {
 	border: none;
 	text-align: center;
 	color: white;
-    background: #ff0000;
+    background: #f25858;
     outline: none;
     border-bottom: 4px solid#424242;
     margin-left: auto;
@@ -205,7 +205,7 @@ canvas {
 .user-button:active,
 .avatar-button:active,
 .join-button:active {
-    background: #ff0000;
+    background: #f25858;
     border-bottom: none;
     border-right: none;
     margin-top: 4px;
@@ -215,14 +215,14 @@ canvas {
 .user-button:hover,
 .avatar-button:hover,
 .join-button:hover {
-	background: #D00000;
+	background: #da4e4e;
 }
 
 /*Animate join to make sure people don't miss it*/
 @keyframes glowing {
-    0% { background-color: #ff0000; }
-    50% { background-color: #ff77a8;  }
-    100% { background-color: #ff0000;  }
+    0% { background-color: #f25858; }
+    50% { background-color: #da4e4e;  }
+    100% { background-color: #f25858;  }
 }
 
 .join-button {
@@ -264,6 +264,40 @@ canvas {
 	
 }
 
+#pickup-gem {
+	display: block;
+	background: none;
+	/*width: 800px;*/
+	width: 100%;
+	margin: auto;
+}
+
+#pickup-gem {
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	font-size: 64px;
+	
+}
+
+#deliver-gem {
+	display: block;
+	background: none;
+	/*width: 800px;*/
+	width: 100%;
+	margin: auto;
+}
+
+#deliver-gem {
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	font-size: 64px;
+	
+}
+
+
+
 /*VIDEO OVERLAYS*/
 #video-container {
 	display: block;
@@ -280,7 +314,6 @@ canvas {
 	transform: translate(-50%, 0%);
 	text-align: center;
 }
-
 
 
 

@@ -135,29 +135,7 @@ module.exports.initMod = function (io, gameState, DATA) {
 
     }, random(1000, 2000));
 
-    var greeter = new NPC(
-    {
-        id: "greeter",
-        nickName: "Greeter",
-        room: "LIFFOutside",
-        x: 120,
-        y: 200,
-        avatar: 1,
-        colors: [2, 2, 1, 5],
-        labelColor: "#1e839d"
-    });
 
-    var band1 = new NPC(
-        {
-            id: "band1",
-            nickName: "Singer",
-            room: "LIFFLobby",
-            x: 311,
-            y: 224,
-            avatar: 1,
-            colors: [2, 2, 1, 5],
-            labelColor: "#1e839d"
-        });
 
         /*band1.behavior = setTimeout(function ramble() {
             if(singerLyricNumber < global.singerTalk.length)
@@ -173,57 +151,9 @@ module.exports.initMod = function (io, gameState, DATA) {
             }
 
         band1.behavior = setTimeout(ramble, random(7000, 10000));
-  
+
         }, random(1000, 2000));*/
-    
-        var band2 = new NPC(
-        {
-            id: "band2",
-            nickName: "Guitarist",
-            room: "LIFFLobby",
-            x: 281,
-            y: 241,
-            avatar: 1,
-            colors: [2, 2, 1, 5],
-            labelColor: "#1e839d"
-        });
-    
-        var band3 = new NPC(
-        {
-            id: "band3",
-            nickName: "Drummer",
-            room: "LIFFLobby",
-            x: 263,
-            y: 221,
-            avatar: 1,
-            colors: [2, 2, 1, 5],
-            labelColor: "#1e839d"
-        });
-    
-        var band4 = new NPC(
-        {
-            id: "band4",
-            nickName: "Tambourine Guy",
-            room: "LIFFLobby",
-            x: 342,
-            y: 216,
-            avatar: 1,
-            colors: [2, 2, 1, 5],
-            labelColor: "#1e839d"
-        });
-    
-        var band5 = new NPC(
-        {
-            id: "band5",
-            nickName: "Bassist",
-            room: "LIFFLobby",
-            x: 368,
-            y: 232,
-            avatar: 1,
-            colors: [2, 2, 1, 5],
-            labelColor: "#1e839d"
-        });     
-        
+
 
     global.VIPList = [];
 
@@ -283,7 +213,7 @@ module.exports.cnsnntrmTalkFilter = function (player, message) {
     return message;
 }
 
-//words can only be used once 
+//words can only be used once
 module.exports.censorshipRoomTalkFilter = function (player, message) {
 
     //create a list of censored words
@@ -451,7 +381,7 @@ module.exports.rhymeRoomTalkFilter = function (player, message) {
     }
 }
 
-//if enters when music is playing sent 
+//if enters when music is playing sent
 module.exports.rhymeRoomJoin = function (playerObject, roomId) {
 
     if (io.sockets.sockets[playerObject.id] != null && global.beatPlaying) {
@@ -461,7 +391,7 @@ module.exports.rhymeRoomJoin = function (playerObject, roomId) {
 
 }
 
-//if enters when music is playing sent 
+//if enters when music is playing sent
 module.exports.rhymeRoomLeave = function (playerObject, roomId) {
 
     if (io.sockets.sockets[playerObject.id] != null) {
@@ -663,6 +593,6 @@ module.exports.onTVInteract = function (pId) {
     var TVState = !DATA.ROOMS.familyRoom.things.TV.visible;
     //change the visibility
     DATA.ROOMS.familyRoom.things.TV.visible = TVState;
-    //send a thing update too ALL clients, changing the client data and telling them to delete and recreate the sprite if they are in the room 
+    //send a thing update too ALL clients, changing the client data and telling them to delete and recreate the sprite if they are in the room
     io.sockets.emit("thingChanged", { thingId: "TV", room: "familyRoom", property: "visible", value: TVState });
 }
