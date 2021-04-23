@@ -54,7 +54,7 @@ module.exports.ROOMS =
             h0000ff: { cmd: "text", url: "https://www.dbstudio.nl/concerten/", label: "Programma", txt: "Klik of Tik op dit bericht om te kijken wat voor bands of evenementen er aan komen!", align: "center", lines: 3, point: [59,66] },
 
         },
-        
+
         things: 
         {
             barChair1: { file: "dBsBarChair.png", frames: 1, frameDelay: 10, position: [185, 68]},
@@ -67,6 +67,11 @@ module.exports.ROOMS =
             lampAndPlant: { file: "dBsBarLampAndPlant.png", frames: 1, frameDelay: 10, position: [119, 0]},
             plant: { file: "dBsBarPlant.png", frames: 1, frameDelay: 10, position: [2, 154]},
             shopAndPlant: { file: "dBsBarShopAndPlant.png", frames: 1, frameDelay: 10, position: [197, 34]},
+
+            andre: { file: "npcAndre.png", frames: 1, frameDelay: 10, position: [223, 61]},
+            kyon: { file: "npcKyon.png", frames: 1, frameDelay: 10, position: [226, 85]},
+            sander: { file: "npcSander.png", frames: 1, frameDelay: 10, position: [219, 101]},
+            nick: { file: "npcNick.png", frames: 1, frameDelay: 10, position: [222, 137]},
         }
     },
 
