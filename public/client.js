@@ -326,7 +326,7 @@ function preload() {
     menuBg2 = loadImage(ASSETS_FOLDER + MENU_BG_FILE2);
     arrowButton = loadImage(ASSETS_FOLDER + "arrowButton.png");
 
-    var logoSheet = loadSpriteSheet(ASSETS_FOLDER + LOGO_FILE, 192, 128, 1);
+    var logoSheet = loadSpriteSheet(ASSETS_FOLDER + LOGO_FILE, 240, 160, 1);
     logo = loadAnimation(logoSheet);
     logo.frameDelay = 30;
 
