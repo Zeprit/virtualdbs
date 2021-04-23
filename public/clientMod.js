@@ -432,14 +432,14 @@ function firstFloorEnter(playerId, roomId) {
 	    }
 	}
 
-    function MOOOVOpenAirCinemaEnter(playerId, roomId)
+    function dBsZaalEnter(playerId, roomId)
 	{
 		print("Freeplay! " + players[playerId].nickName + " entered room " + roomId);
 		if(playerId == me.id && players[playerId].nickName.length > 0)
 		{
 			print("player with name entered dBs");
 			// start the video!
-      setVideo("AhXUEnjEn9Q", true, "");
+      setVideo("9oleJ4OUnxU", true, "");
 			//setVideo("playlist&list=PLNiztf0SpnykWe8WJuka-EPJLvKCNg5XC");
 		}
 	 // e = document.getElementById("talk-form");
@@ -451,7 +451,7 @@ function firstFloorEnter(playerId, roomId) {
 		//	e.style.display = "block";
     }
 
-     function MOOOVOpenAirCinemaExit(playerId)
+     function dBsZaalExit(playerId)
 	{
         setVideo("", true, "");
 
