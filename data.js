@@ -12,11 +12,11 @@ module.exports.SETTINGS = {
 module.exports.ROOMS =
 {
       dBsZaal: {
-        bg: "dBsZaal.png",
+        bg: "dBsStageBG.png",
         frames: 1,
         frameDelay: 30,
         avatarScale: 2,
-        area: "dBsZaal-areas.png",
+        area: "dBsStage_areas.png",
         tint: "#ffffff",
         pageBg: "#170102",
         bubblesY: 170,
@@ -24,7 +24,7 @@ module.exports.ROOMS =
         spawn: [72, 90, 173, 152],
         areaColors: {
             //h will be replaced by #
-            hed008c: { cmd: "enter", room: "dBsBar", label: "Bar", point: [247, 136], enterPoint: [94, 74], obstacle: false },
+            hff0000: { cmd: "enter", room: "dBsBar", label: "Bar", point: [247, 136], enterPoint: [94, 74], obstacle: false },
         },
         things: {
 
