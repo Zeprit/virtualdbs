@@ -132,7 +132,8 @@ module.exports.ROOMS =
             //h will be replaced by #
             hff0000: { cmd: "enter", room: "dBsLobby", label: "Lobby", point: [128,189], enterPoint: [50,35], obstacle: false },
         },
-        things: {
+        things: 
+        {
             picnicTable1: { file: "dBsBeerGartenPicknictable1.png", frames: 1, frameDelay: 10, position: [193,82], obstacle: true},
             picnicTable2: { file: "dBsBeerGartenPicknictable2.png", frames: 1, frameDelay: 10, position: [13,114], obstacle: true},
             chair1: { file: "dBsBeerGartenChair1.png", frames: 1, frameDelay: 10, position: [111,102]},
@@ -142,6 +143,11 @@ module.exports.ROOMS =
             torch2: { file: "dBsBeerGartenTorch.png", frames: 4, frameDelay: 10, position: [75,156]},
             pole: { file: "dBsBeerGartenPole.png", frames: 1, frameDelay: 10, position: [112, 0]},
             poleLights: { file: "dBsBeerGartenPoleLIGHTS.png", frames: 1, frameDelay: 10, position: [0, 0]},
+
+            james: { file: "npcJames.png", frames: 1, frameDelay: 10, position: [192, 153]},
+            evert: { file: "npcEvert.png", frames: 1, frameDelay: 10, position: [207, 152]},
+            robert: { file: "npcRobert.png", frames: 1, frameDelay: 10, position: [223, 162]},
+            paul: { file: "npcPaul.png", frames: 1, frameDelay: 10, position: [129, 88]},
         }
     },
 
