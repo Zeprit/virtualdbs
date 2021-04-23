@@ -9,9 +9,201 @@ module.exports.SETTINGS = {
     INTRO_TEXT: "Click or Tap to move"
 };
 
-module.exports.ROOMS = {
+module.exports.ROOMS =
+{
+        dBsZaal: {
+        bg: "dBsZaal.png",
+        frames: 1,
+        frameDelay: 30,
+        avatarScale: 2,
+        area: "dBsZaal-areas.png",
+        tint: "#ffffff",
+        pageBg: "#170102",
+        bubblesY: 170,
+        spawn: [72, 90, 173, 152],
+        areaColors: {
+            //h will be replaced by #
+            hed008c: { cmd: "enter", room: "dBsBar", label: "Bar", point: [247, 136], enterPoint: [94, 74], obstacle: false },
+        },
+        things: {
 
-    LIFFLobby: {
+        }
+    },
+
+    dBsBar: {
+        bg: "dBsBar.png",
+        frames: 1,
+        frameDelay: 30,
+        avatarScale: 2,
+        area: "dBsBar-areas.png",
+        tint: "#ffffff",
+        pageBg: "#170102",
+        bubblesY: 45,
+        spawn: [72, 90, 173, 152],
+        areaColors: {
+            //h will be replaced by #
+            hff00ff: { cmd: "enter", room: "dBsZaal", label: "Zaal", point: [94, 68], enterPoint: [234, 136], obstacle: true },
+            hffff00: { cmd: "enter", room: "dBsLobby", label: "Lobby", point: [156, 26], enterPoint: [156, 178], obstacle: false },
+            h00ff00: { cmd: "text", url: "https://shop.dbstudio.nl/", label: "dBs Shop", txt: "Voor alle dBs merchandise, of zo een heerlijk drankje!\n\nKlik of Tik op dit bericht om de winkel te bezoeken.", align: "center", lines: 5, point: [183,70] },
+            hff0000: { cmd: "text", url: "https://portal.dbstudio.nl/", label: "Reserveringen", txt: "Wil je komen repeteren in onze toffe oefenstudios?\n\nKlik of Tik op dit bericht.", align: "center", lines: 4, point: [189,149] },
+            h0000ff: { cmd: "text", url: "https://www.dbstudio.nl/concerten/", label: "Programma", txt: "Klik of Tik op dit bericht om te kijken wat voor bands of evenementen er aan komen!", align: "center", lines: 3, point: [59,66] },
+
+        },
+        things: {
+
+        }
+    },
+
+    dBsLobby: {
+        bg: "dBsLobby.png",
+        frames: 1,
+        frameDelay: 30,
+        avatarScale: 2,
+        area: "dBsLobby-areas.png",
+        tint: "#ffffff",
+        pageBg: "#170102",
+        bubblesY: 45,
+        spawn: [72, 90, 173, 152],
+        areaColors: {
+            //h will be replaced by #
+            hffff00: { cmd: "enter", room: "dBsBar", label: "Bar", point: [158, 190], enterPoint: [158, 32], obstacle: false },
+        },
+        things: {
+
+        }
+    },
+
+
+/*
+    IFALobby:
+    {
+        bg: "ifalobby-bg1.png",
+        frames: 6,
+        frameDelay: 30,
+        avatarScale: 2,
+        pageBg: "#011221",
+        tint: "#ffffff",
+        bubblesY: 44,
+        spawn: [95, 138, 144, 158],
+        area: "ifalobby-areas.png",
+
+        areaColors:
+        {
+            h66ff00: { cmd: "enter", room: "IFATheater1", label: "Theatre Room 1", point: [25,43], enterPoint: [127,188], obstacle: true },
+            h00eeff: { cmd: "enter", room: "IFATheater2", label: "Theatre Room 2", point: [225,39], enterPoint: [127,188], obstacle: true },
+            //h00e436: { cmd: "enter", room: "IFAOutside", label: "Outside", point: [132, 192], enterPoint: [128, 118], obstacle: false },
+
+            //shop
+            he17715: { cmd: "text", url: "https://filmfestivalassen.nl/ifa-shop/", label: "Webshop", txt: "Get some goods and support IFA!\n\nClick or Tap on this box to visit the store", align: "center", lines: 4, point: [180,129],obstacle: true },
+            //program
+            h23cbb3: { cmd: "text", url: "https://filmfestivalassen.nl/films-tickets/", label: "Program", txt: "The IFA film program\n\nClick or Tap on this box to visit the website", align: "center", lines: 4, point: [77,129],obstacle: true},
+            //food
+            h1ff25b: { cmd: "text", url: "https://filmfestivalassen.nl/een-hapje-en-drankje-voor-onder-de-film/", label: "Food & Drinks", txt: "Tasty food and beverages\n\nTap on this box to visit the store", align: "center", lines: 4, point: [128, 128],obstacle: true},
+            //tickets
+            h2525c2: { cmd: "text", url: "https://filmfestivalassen.nl/films-tickets/", label: "Tickets", txt: "Get your IFA tickets here\n\nClick or Tap on this box to visit the ticket store", align: "center", lines: 4, point: [228,160],obstacle: true},
+            //Publiekswaardering
+            h23b63f: { cmd: "text", url: "https://filmfestivalassen.nl/top-10-ifa-2021/", label: "IFA Top 10", txt: "View and vote for your favourite IFA film\n\nClick or Tap on this box to visit the website", align: "center", lines: 5, point: [73,129],obstacle: true},
+
+            //posters
+            hdc2626: { cmd: "text", label: "Kuessipan", align: "center", lines: 1 },
+            h266cdc: { cmd: "text", label: "The Dilemma of Desire", align: "center", lines: 1},
+            hdc26a0: { cmd: "text", label: "Needle Park Baby", align: "center", lines: 1},
+        },
+
+        things:
+        {
+            Railing: { file: "ifalobby-railing.png", frames: 1, frameDelay: 10, position: [52, 39] },
+            table1: { file: "ifalobby-tables.png", frames: 1, frameDelay: 10, position: [8,160]},
+            //barperson1: { file: "medewerker1.png", frames: 1, frameDelay: 10, position: [49, 163], label: "Waiter" },
+            //barperson2: { file: "medewerker3.png", frames: 1, frameDelay: 10, position: [13, 150], label: "Waiter" },
+            //lobbyperson1: { file: "ifa-medewerker1.png", frames: 1, frameDelay: 10, position: [10, 70], label: "IFA Attendant", command: { cmd: "text", txt: "IFA Attendant:\nSsssh, there are movies playing in this room. Please be quiet when you enter.", align: "left", lines: 5, point: [22, 88] } },
+            //lobbyperson2: { file: "ifa-medewerker2.png", frames: 1, frameDelay: 10, position: [10, 70], label: "IFA Attendant", command: { cmd: "text", txt: "IFA Attendant:\nSsssh, there are movies playing in this room. Please be quiet when you enter.", align: "left", lines: 5, point: [22, 88] } },
+
+            //bar
+            //glass
+        }
+    },
+
+    IFATheater1:
+    {
+         bg: "ifatheatre1.png",
+        frames: 1,
+        frameDelay: 30,
+        avatarScale: 2,
+        area: "ifatheatre1-areas.png",
+        tint: "#ffffff",
+        pageBg: "#170102",
+        bubblesY: 170,
+        spawn: [116,166,140,176],
+
+        areaColors:
+        {
+            //h will be replaced by #
+            he17715: { cmd: "enter", room: "IFALobby", label: "Lobby", point: [127,190], enterPoint: [25,41], obstacle: false },
+        },
+        things: {
+        shadow: { file: "ifatheatre1-shadow.png", frames: 1, frameDelay: 10, position: [0, 0] },
+        chairs1: { file: "ifatheatre1-chairs2.png", frames: 1, frameDelay: 10, position: [14, 164] },
+        chairs2: { file: "ifatheatre1-chairs3.png", frames: 1, frameDelay: 10, position: [14, 147] },
+        chairs3: { file: "ifatheatre1-chairs4.png", frames: 1, frameDelay: 10, position: [14, 130] },
+        chairs4: { file: "ifatheatre1-chairs5.png", frames: 1, frameDelay: 10, position: [14, 113] },
+        }
+    },
+
+
+    IFATheater2:
+    {
+        bg: "ifatheatre2.png",
+        frames: 1,
+        frameDelay: 30,
+        avatarScale: 2,
+        area: "ifatheatre2-areas.png",
+        tint: "#ffffff",
+        pageBg: "#130102",
+        bubblesY: 170,
+        spawn: [112, 174, 142, 182],
+        areaColors: {
+            //h will be replaced by #
+            he17715: { cmd: "enter", room: "IFALobby", label: "Lobby", point: [127,190], enterPoint: [225,39], obstacle: false },
+        },
+        things: {
+        shadow: { file: "ifatheatre2-shadow.png", frames: 1, frameDelay: 10, position: [0, 0] },
+        chairs1: { file: "ifatheatre2-chairs1.png", frames: 1, frameDelay: 10, position: [68, 147] },
+        chairs2: { file: "ifatheatre2-chairs2.png", frames: 1, frameDelay: 10, position: [68, 130] },
+        chairs3: { file: "ifatheatre2-chairs3.png", frames: 1, frameDelay: 10, position: [68, 113] },
+        }
+    },
+
+
+    IFAOutside:
+    {
+        bg: "likelike-outside-omoma.png",
+        frames: 4,
+        frameDelay: 20,
+        avatarScale: 2,
+        pageBg: "#011221",
+        //tint: "#fdeac8",
+        tint: "#ffffff",
+        bubblesY: 44,
+        spawn: [94, 166, 163, 199],
+
+        area: "likelikeOutside-areas.png",
+        areaColors:
+        {
+
+        },
+
+        things:
+        {
+
+        },
+    },
+*/
+
+
+/*
+    LIFFLobby:
+    {
         //the background graphics, it can be a spreadsheet
         bg: "liff-lobby.png",
         //if spreadsheet frames
@@ -133,7 +325,7 @@ module.exports.ROOMS = {
         bg: "dBsZaal.png",
         frames: 1,
         frameDelay: 30,
-        avatarScale: 2,
+        avatarScale: 4,
         area: "dBsZaal-areas.png",
         tint: "#ffffff",
         pageBg: "#170102",
@@ -141,7 +333,7 @@ module.exports.ROOMS = {
         spawn: [72, 90, 173, 152],
         areaColors: {
             //h will be replaced by #
-            hed008c: { cmd: "enter", room: "dBsBar", label: "Bar", point: [247, 136], enterPoint: [94, 74], obstacle: false },
+            hff00ff: { cmd: "enter", room: "dBsBar", label: "Bar", point: [247, 136], enterPoint: [94, 74], obstacle: false },
         },
         things: {
 
@@ -152,7 +344,7 @@ module.exports.ROOMS = {
         bg: "dBsBar.png",
         frames: 1,
         frameDelay: 30,
-        avatarScale: 2,
+        avatarScale: 4,
         area: "dBsBar-areas.png",
         tint: "#ffffff",
         pageBg: "#170102",
@@ -160,31 +352,7 @@ module.exports.ROOMS = {
         spawn: [72, 90, 173, 152],
         areaColors: {
             //h will be replaced by #
-            hff00ff: { cmd: "enter", room: "dBsZaal", label: "Zaal", point: [94, 68], enterPoint: [234, 136], obstacle: true },
-            hffff00: { cmd: "enter", room: "dBsLobby", label: "Lobby", point: [156, 26], enterPoint: [156, 178], obstacle: false },
-            h00ff00: { cmd: "text", url: "https://shop.dbstudio.nl/", label: "dBs Shop", txt: "Voor alle dBs merchandise, of zo een heerlijk drankje!\n\nKlik of Tik op dit bericht om de winkel te bezoeken.", align: "center", lines: 5, point: [183,70] },
-            hff0000: { cmd: "text", url: "https://portal.dbstudio.nl/", label: "Reserveringen", txt: "Wil je komen repeteren in onze toffe oefenstudios?\n\nKlik of Tik op dit bericht.", align: "center", lines: 4, point: [189,149] },
-            h0000ff: { cmd: "text", url: "https://www.dbstudio.nl/concerten/", label: "Programma", txt: "Klik of Tik op dit bericht om te kijken wat voor bands of evenementen er aan komen!", align: "center", lines: 3, point: [59,66] },
-
-        },
-        things: {
-
-        }
-    },
-
-    dBsLobby: {
-        bg: "dBsLobby.png",
-        frames: 1,
-        frameDelay: 30,
-        avatarScale: 2,
-        area: "dBsLobby-areas.png",
-        tint: "#ffffff",
-        pageBg: "#170102",
-        bubblesY: 45,
-        spawn: [72, 90, 173, 152],
-        areaColors: {
-            //h will be replaced by #
-            hffff00: { cmd: "enter", room: "dBsBar", label: "Bar", point: [158, 190], enterPoint: [158, 32], obstacle: false },
+            hff00ff: { cmd: "enter", room: "dBsZaal", label: "Zaal", point: [94, 64], enterPoint: [234, 136], obstacle: false },
         },
         things: {
 
@@ -293,5 +461,5 @@ module.exports.ROOMS = {
 
         }
     },
-
+*/
 };

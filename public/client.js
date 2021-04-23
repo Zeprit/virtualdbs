@@ -49,7 +49,8 @@ var canvasScale;
 var AVATAR_W = 20;
 var AVATAR_H = 36;
 //number of avatars in the sheets
-var AVATARS = 13;
+var AVATARS = 10;
+var MAXAVATARS = 11;
 //the big file if used
 var ALL_AVATARS_SHEET = "allAvatars.png";
 //the number of frames for walk cycle and emote animation
@@ -66,7 +67,7 @@ var SETTINGS;
 var IMAGES, SOUNDS;
 
 //avatar linear speed, pixels per milliseconds
-var SPEED = 50;
+var SPEED = 65;
 
 var ASSETS_FOLDER = "assets/";
 
@@ -81,8 +82,9 @@ var TEXT_H = 14;
 var TEXT_PADDING = 6;
 var TEXT_LEADING = TEXT_H + 8;
 
-var LOGO_FILE = "logo.png";
-var MENU_BG_FILE = "menu_liff.png";
+var LOGO_FILE = "mooovmenulogo-sheet.png";
+var MENU_BG_FILE = "mooovmenu.png";
+var MENU_BG_FILE2 = "mooovmenu2.png";
 
 //how long does the text bubble stay
 var BUBBLE_TIME = 8;
@@ -100,11 +102,11 @@ var PAGE_COLOR = "#000000";
 var REF_COLORS = ["#413830", "#c0692a", "#ff004d", "#29adff","#ea0046","#208acc"];
 //the palettes that will respectively replace the colors above
 //black and brown more common
-var HAIR_COLORS = ["#413830", "#413830", "#413830", "#742f29", "#742f29", "#742f29", "#ffa300", "#a8e72e", "#a28879", "#be1250", "#ffec27", "#00b543", "#ff6c24"];
+var HAIR_COLORS = ["#2b2520", "#543830", "#413830", "#7f1a29", "#743234", "#70463a", "#d5a36d", "#a8c574", "#a28879", "#b65261", "#dbcb77", "#60b572", "#d17155"];
 var SKIN_COLORS = ["#e27c32", "#8f3f17", "#ffccaa"];
-var TOP_COLORS = ["#a8e72e", "#111d35", "#c2c3c7", "#f3ef7d", "#ca466d", "#111d35", "#ffec27", "#1e839d",
-    "#ff004d", "#ff9d81", "#ff6c24", "#ffec27", "#be1250", "#b7250b"];
-var BOTTOM_COLORS = ["#00b543", "#a28879", "#422136", "#ca466d", "#ffec27", "#1e839d", "#ff6c24", "#be1250", "#413830", "#c2c3c7"];
+var TOP_COLORS = ["#98c772", "#222340", "#b8b9bd", "#e8e49a", "#ca6c7f", "#3b375c", "#efba53", "#4b809d",
+    "#e55f90", "#f5a789", "#e97c56", "#f2e67e", "#be415a", "#8f252e"];
+var BOTTOM_COLORS = ["#4ab55f", "#a28879", "#472a3a", "#bd606d", "#ebd778", "#4f839d", "#e86251", "#b23f68", "#4d4238", "#c2c3c7"];
 
 var HAIR_COLORS_RGB = [];
 var SKIN_COLORS_RGB = [];
@@ -120,7 +122,7 @@ var paletteIndex = 0;
 
 //GUI
 var LABEL_NEUTRAL_COLOR = "#FFFFFF";
-var UI_BG = "#000000";
+var UI_BG = "#1f1f1f";
 
 //global vars! I love global vars ///////////////////
 
@@ -200,6 +202,7 @@ var appearEffect, disappearEffect;
 //sounds
 var blips;
 var appearSound, disappearSound;
+var sfxStartCampfire, sfxGetGem, sfxDeliverGem;
 
 //if the server restarts the clients reconnects seamlessly
 //don't do first log kind of things
@@ -213,20 +216,7 @@ var dataLoaded = false;
 var gameStarted = false;
 
 //description for each character
-var descripText = ["A famous actress, model and singer.\n Not many people know this, but the iconic white dress upskirt\...\nthat was just her performing leg magic.",
-                  "Growing up is not one of his strong suits.\nHis green suit...That's his strong suit!\nLovely hat with feathers as well, just lovely!",
-                  "They came all the way to earth, only to forget their phone.\nWho forgets their phone!? This gentle alien did...",
-                  "He usually walked around with a machete or machine gun, killing bad guys.\nNowadays he's more into staying home and watching movies, though.",
-                  "Invented the pirate word 'Arrr'\nwhen they stubbed their bony toe.\n Now used by pirates all around.",
-                  "This witch starred in a really wicked musical.\nRumor has it that she's getting her own movie as well!\nAll because she terrorised a peculiar group of misfits.",
-                  "This ogre loves living life in his own private swamp.\nHis best friend is a donkey, who is not quite the sharpest tool in the shed.",
-                  "This velociraptor has a popcorn kernel stuck between their teeth.\nThey still haven't been able to remove it.\n Those blasted tiny arms\...\ They'll be the death of the dinosaur for sure.",
-                  "He said he'd be back and now this cybernetic android finally is indeed... Back!\nHe had to trade his shotgun for a toy one, though. Can't be too safe...",
-                  "Someone did it again\...\ They peed on this dude's rug again.\nArmed with a delicious 'white russian', he's out looking for the culprit.",
-                  "She's the princess of an undersea kingdom, with an awesome fishy body.\nNot to be confused with the popular laundry detergent brand.",
-                  "He's the hero we deserve, but not the one we need right now.\nSo\...\ Should we just ask him to leave, or\...\?\nJust kidding, he's totally welcome!",
-                  "He's a stereotypical depiction of a pirate.\nDrunk, unwashed and foul... and yet...\nyou can not help but love him for it.",
-                  "This bookworm is one of the smartest witches in town.\nIf you tell her otherwise,\nshe'll put her broomstick where the sun doesn't shine.",]
+var descripText = [""]
 
 var medewerker = true;
 var rw = 10;
@@ -334,11 +324,12 @@ function preload() {
     }
 
     menuBg = loadImage(ASSETS_FOLDER + MENU_BG_FILE);
+    menuBg2 = loadImage(ASSETS_FOLDER + MENU_BG_FILE2);
     arrowButton = loadImage(ASSETS_FOLDER + "arrowButton.png");
 
-    var logoSheet = loadSpriteSheet(ASSETS_FOLDER + LOGO_FILE, 66, 82, 4);
+    var logoSheet = loadSpriteSheet(ASSETS_FOLDER + LOGO_FILE, 514, 121, 4);
     logo = loadAnimation(logoSheet);
-    logo.frameDelay = 10;
+    logo.frameDelay = 30;
 
     var walkIconSheet = loadSpriteSheet(ASSETS_FOLDER + "walkIcon.png", 6, 8, 4);
     walkIcon = loadAnimation(walkIconSheet);
@@ -375,6 +366,15 @@ function preload() {
     disappearSound.playMode("sustain");
     disappearSound.setVolume(0.3);
 
+    sfxStartCampfire = loadSound(ASSETS_FOLDER + "sfxStartCampfire");
+    sfxStartCampfire.playMode("sustain");
+
+    sfxGetGem = loadSound(ASSETS_FOLDER + "sfxGetGem");
+    sfxGetGem.playMode("sustain");
+
+    sfxDeliverGem = loadSound(ASSETS_FOLDER + "sfxDeliverGem");
+    sfxDeliverGem.playMode("sustain");
+    //disappearSound.setVolume(0.3);
 
 }
 
@@ -406,7 +406,7 @@ function setup() {
         var sliceX = 0;
 
 
-        for (var i = 0; i < AVATARS; i++) {
+        for (var i = 0; i < MAXAVATARS; i++) {
 
             var walkSheet = createImage(AVATAR_W * WALK_F, AVATAR_H);
             walkSheet.copy(allSheets, sliceX, 0, AVATAR_W * WALK_F, AVATAR_H, 0, 0, AVATAR_W * WALK_F, AVATAR_H);
@@ -1165,17 +1165,17 @@ function update() {
     }
     //renders the avatar selection screen which can be fully within the canvas
     else if (screen == "avatar") {
-        image(menuBg, 0, 0, WIDTH, HEIGHT);
+        image(menuBg2, 0, 0, WIDTH, HEIGHT);
 
         textFont(font, FONT_SIZE * 2);
         textAlign(CENTER, BASELINE);
         fill("#FFFFFF");
-        text("Body", WIDTH / 4, HEIGHT / 2 - 10);
-        text("Color", (WIDTH) - (WIDTH / 4), HEIGHT / 2 - 10);
+        text("Body", (WIDTH / 4) - 10 - 32, HEIGHT / 2 - 20);
+        text("Color", (WIDTH) - (WIDTH / 4) + 10 + 32, HEIGHT / 2 - 20);
 
-        text("Choose your avatar", WIDTH / 2, 40 * ASSET_SCALE);
+        text("Choose your avatar", WIDTH / 2, 32 * ASSET_SCALE);
         textFont(font, FONT_SIZE * 0.5);
-        text(descripText[currentAvatar], WIDTH / 2, HEIGHT - 80);
+        //text(descripText[currentAvatar], WIDTH / 2, HEIGHT - 60);
 
         menuGroup.draw();
 
@@ -1361,7 +1361,7 @@ function update() {
                     //////this part is only triggered by ME
                     if (p == me) {
                         //reached destination, execute action
-                        if (me.x == me.destinationX && me.y == me.destinationY && nextCommand != null) {
+                        if (me.x == me.destinationX && me.y == me.destinationY && nextCommand != null && nickName != "") {
                             executeCommand(nextCommand);
                             nextCommand = null;
                         }
@@ -1394,7 +1394,7 @@ function update() {
 
         //GUI
         if (nickName != "" && rolledSprite == null && areaLabel == "")
-            animation(walkIcon, floor(mouseX + 6), floor(mouseY - 6));
+            animation(walkIcon, floor(mouseX + 3), floor(mouseY - 3));
 
         //draw all the speech bubbles lines first only if the players have not moves since speaking
         for (var i = 0; i < bubbles.length; i++) {
@@ -1459,7 +1459,7 @@ function update() {
                 label = "";
 
         //draw rollover label
-        if (label != "" && longText == "") {
+        if (label != "" && longText == "" && nickName != "") {
             textFont(font, FONT_SIZE);
             textAlign(LEFT, BASELINE);
             var lw = textWidth(label);
@@ -1509,7 +1509,7 @@ function update() {
 
                 var tw = LONG_TEXT_BOX_W - LONG_TEXT_PADDING * 2;
                 var th = longTextLines * TEXT_LEADING;
-
+                var textYOffset = ROOMS[me.room].tYOffset;
 
                 //single line centered text
                 if (longTextAlign == "center" && longTextLines == 1)
@@ -1520,17 +1520,19 @@ function update() {
 
                 fill(UI_BG);
 
-                rect(floor(width / 2 - rw / 2), floor(height / 2 - rh / 2), floor(rw), floor(rh));
+                rect(floor(width / 2 - rw / 2), floor(height / 2 - rh / 2) + textYOffset, floor(rw), floor(rh));
                 //rect(20, 20, 100, 50);
 
                 fill(LABEL_NEUTRAL_COLOR);
-                text(longText, floor(width / 2 - tw / 2 + LONG_TEXT_PADDING - 1), floor(height / 2 - th / 2) + TEXT_LEADING - 3, floor(tw));
+                text(longText, floor(width / 2 - tw / 2 + LONG_TEXT_PADDING - 1), floor(height / 2 - th / 2) + TEXT_LEADING - 3 + textYOffset, floor(tw));
             }
         }//end long text
 
         if (nickName == "" && (logoCounter < LOGO_STAY || LOGO_STAY == -1)) {
             logoCounter += deltaTime;
-            //animation(logo, floor(width / 2), floor(height / 2));
+            //animation(logobg, floor(width / 2), floor((height / 2) ));
+            //animation(logo, floor(width / 2), floor((height / 2) + (sin(logoCounter/500) * 5) ));
+            animation(logo, floor(width / 2)+1, floor((78)  + (sin(logoCounter/500) * 3)));
         }
 
     }//end game
@@ -1575,28 +1577,28 @@ function avatarSelection() {
     //buttons
     var previousBody, nextBody, previousColor, nextColor;
 
-    var ss = loadSpriteSheet(arrowButton, 56, 56, 3);
+    var ss = loadSpriteSheet(arrowButton, 64, 64, 3);
     var animation = loadAnimation(ss);
 
     //the position is the bottom left
-    previousBody = createSprite((48 * ASSET_SCALE), (HEIGHT / 2) + 28);
+    previousBody = createSprite((48 * ASSET_SCALE) - 22 - 32, (HEIGHT / 2) + 20);
     previousBody.addAnimation("default", animation);
     previousBody.animation.stop();
     previousBody.mirrorX(-1);
     menuGroup.add(previousBody);
 
-    nextBody = createSprite(64 * ASSET_SCALE + 28, HEIGHT / 2 + 28);
+    nextBody = createSprite(64 * ASSET_SCALE + 26 - 32, HEIGHT / 2 + 20);
     nextBody.addAnimation("default", animation);
     nextBody.animation.stop();
     menuGroup.add(nextBody);
 
-    previousColor = createSprite(175.5 * ASSET_SCALE, HEIGHT / 2 + 28);
+    previousColor = createSprite(175.5 * ASSET_SCALE - 2 + 32, HEIGHT / 2 + 20);
     previousColor.addAnimation("default", animation);
     previousColor.animation.stop();
     previousColor.mirrorX(-1);
     menuGroup.add(previousColor);
 
-    nextColor = createSprite(191.5 * ASSET_SCALE + 28, HEIGHT / 2 + 28);
+    nextColor = createSprite(191.5 * ASSET_SCALE + 50 + 32, HEIGHT / 2 + 20);
     nextColor.addAnimation("default", animation);
     nextColor.animation.stop();
     menuGroup.add(nextColor);
@@ -1714,7 +1716,7 @@ function Player(p) {
         this.sprite.mouseActive = true;
 
     //this.sprite.debug = true;
-    this.sprite.setCollider("rectangle", 3, 6, 14, 30);
+    this.sprite.setCollider("rectangle", 3, 4, 14, 32);
 
 
     //no parent in js? WHAAAAT?
@@ -2005,8 +2007,8 @@ function canvasReleased() {
     else if (nickName != "" && screen == "game" && mouseButton == LEFT) {
         //exit text
         if (longText != "" && longText != SETTINGS.INTRO_TEXT) {
-
-            if (((mouseY) >= ((height / 2) - (rh / 2) )) && ((mouseY) <= ((height / 2) + (rh / 2) )) && ((mouseX) >= ((width / 2) - (rw / 2) )) && ((mouseX) <= ((width / 2) + (rw / 2) )) ){
+            var textYOffset = ROOMS[me.room].tYOffset;
+            if (((mouseY) >= ((height / 2) - (rh / 2) + textYOffset )) && ((mouseY) <= ((height / 2) + (rh / 2) + textYOffset )) && ((mouseX) >= ((width / 2) - (rw / 2) )) && ((mouseX) <= ((width / 2) + (rw / 2) )) ){
               if (longTextLink != "")
                   window.open(longTextLink, "_blank");
             }
@@ -2162,9 +2164,6 @@ function executeCommand(c) {
                 else {
                     console.log("ERROR: No spawn point or area set for " + c.room);
                 }
-
-
-
             }
             break;
 
@@ -2174,10 +2173,6 @@ function executeCommand(c) {
                 socket.emit("action", c.actionId);
             }
 
-            break;
-
-        case "changearearole":
-            toggleAreaColor();
             break;
 
         case "text":
@@ -2198,15 +2193,420 @@ function executeCommand(c) {
                     longTextLink = "";
                 else
                     longTextLink = c.url;
-
             }
             else
                 print("Warning for text: make sure to specify arg as text")
             break;
 
+        /*
+        case "indiana1":
+            if (c.txt != null) {
 
+                longText = "Indiana Jones:\nBrrrr, I feel a breeze picking up. Could you light that fire for me?";
+                if (c.lines != null)
+                    longTextLines = c.lines;
+                else
+                    longTextLines = 1;
+
+                if (c.align != null)
+                    longTextAlign = c.align;
+                else
+                    longTextAlign = "center";//or center
+
+                if (c.url == null)
+                    longTextLink = "";
+                else
+                    longTextLink = c.url;
+            }
+            else
+                print("Warning for text: make sure to specify arg as text")
+
+            //ROOMS["MOOOVDesert1"].areaColors["h000000"].cmd = "text";
+            break;
+
+         case "indiana2":
+            if (c.txt != null) {
+
+                 longText = "Indiana Jones:\nAhhhh much better! Now to find that super secret hidden treasure...";
+                 if (c.lines != null)
+                    longTextLines = c.lines;
+                else
+                    longTextLines = 1;
+
+                if (c.align != null)
+                    longTextAlign = c.align;
+                else
+                    longTextAlign = "center";//or center
+
+                if (c.url == null)
+                    longTextLink = "";
+                else
+                    longTextLink = c.url;
+            }
+            else
+                print("Warning for text: make sure to specify arg as text")
+
+            //ROOMS["MOOOVDesert1"].areaColors["h000000"].cmd = "text";
+            break;
+
+            */
+
+        case "lightcampfire":
+            //case "text"
+            /*
+            if (c.txt != null) {
+
+                longText = "With a quick strike of a match the dead-dry wood comes alight with a soft, soothing warmth.";
+                if (c.lines != null)
+                    longTextLines = c.lines;
+                else
+                    longTextLines = 1;
+
+                if (c.align != null)
+                    longTextAlign = c.align;
+                else
+                    longTextAlign = "center";//or center
+
+                if (c.url == null)
+                    longTextLink = "";
+                else
+                    longTextLink = c.url;
+            }
+            else
+                print("Warning for text: make sure to specify arg as text")
+            //*/
+            var desertRoom = ROOMS["MOOOVDesert1"];
+            var theater1Room = ROOMS["MOOOVTheater1"];
+
+            //Campfire lights up
+            desertRoom.things["campfire"].command["cmd"] = "text";
+            desertRoom.things["campfire"].frames = 8;
+            desertRoom.things["campfire"].command["txt"] = "A flurry of crackles fills the desert air.";
+            var dataThing = desertRoom.things["campfire"];
+            dataThing.spriteGraphics = desertRoom.things["loadcampfire"].spriteGraphics;
+            removeThing("campfire", "MOOOVDesert1");
+            createThing(dataThing, desertRoom);
+
+            if (SOUND){
+                sfxStartCampfire.play();
+            }
+
+            //Change Indiana Jones' dialogue
+            //desertRoom.things["indianajones"].command["cmd"] = "indiana2";
+            desertRoom.things["indianajones"].command["txt"] = "Indiana Jones:\nAhhhh much better! Now to find that super secret hidden treasure...";
+            var dataThing2 = desertRoom.things["indianajones"];
+            dataThing2.spriteGraphics = desertRoom.things["loadindiana"].spriteGraphics;
+            removeThing("indianajones", "MOOOVDesert1");
+            createThing(dataThing2, desertRoom);
+
+            //Cactus becomes interactable
+            desertRoom.things["cactus"].command["txt"] = "A Normal Cactus:\nPsst, I hear there's a hidden room in the cinema, but you need a special pair of goggles to see the entrance.";
+            desertRoom.things["cactus"].frames = 7;
+            var dataThing3 = desertRoom.things["cactus"];
+            dataThing3.spriteGraphics = desertRoom.things["loadcactus"].spriteGraphics;
+            removeThing("cactus", "MOOOVDesert1");
+            createThing(dataThing3, desertRoom);
+
+            //Gem appears in the theater
+            theater1Room.things["gem"].visible = true;
+            theater1Room.things["gem"].position = [12, 112];
+
+
+            /*
+            var e = document.getElementByID("no-talkie");
+            if (e != null){
+                e.style.display = "block";
+            }
+            //*/
+
+            //Camp fire text
+            desertRoom.things["campfire"].command["txt"] = "A flurry of crackles fills the desert air.";
+
+            break;
+
+        case "monster1":
+            //case "text"
+            if (c.txt != null) {
+
+                longText = "Monster:\nGOGGLES MINE, GO AWAY. CAN'T FIND GEM.";
+                if (c.lines != null)
+                    longTextLines = c.lines;
+                else
+                    longTextLines = 1;
+
+                if (c.align != null)
+                    longTextAlign = c.align;
+                else
+                    longTextAlign = "center";//or center
+
+                if (c.url == null)
+                    longTextLink = "";
+                else
+                    longTextLink = c.url;
+            }
+            else
+                print("Warning for text: make sure to specify arg as text")
+
+            var theaterRoom = ROOMS["MOOOVTheater1"];
+
+            //Change gem text if you meet monster already
+            theaterRoom.things["gem"].command["cmd"] = "pickupgem_metmonster";
+
+            break;
+
+        //if you haven't talked to the monster
+        case "pickupgem_nomonster":
+            //case "text"
+            if (c.txt != null) {
+
+                longText = "A flawless GEM with an other-worldly sparkle. Whoever it belonged to took great care of it.";
+                if (c.lines != null)
+                    longTextLines = c.lines;
+                else
+                    longTextLines = 1;
+
+                if (c.align != null)
+                    longTextAlign = c.align;
+                else
+                    longTextAlign = "center";//or center
+
+                if (c.url == null)
+                    longTextLink = "";
+                else
+                    longTextLink = c.url;
+            }
+            else
+                print("Warning for text: make sure to specify arg as text")
+
+            var desertroom = ROOMS["MOOOVDesert1"];
+            var openAirCinemaRoom = ROOMS["MOOOVOpenAirCinema"];
+            var corridorRoom = ROOMS["MOOOVCorridor"];
+            var theater1Room = ROOMS["MOOOVTheater1"];
+
+            if (SOUND){
+                sfxGetGem.play();
+            }
+            //Monster now realizes you have the gem in your inventory
+            openAirCinemaRoom.things["monster"].command["cmd"] = "monster2";
+
+            //Make it so the player can't interact with the gem anymore
+            removeThing("gem", "MOOOVTheater1");
+            theater1Room.things["gem"].visible = false;
+            theater1Room.things["gem"].command["cmd"] = "nothing";
+            theater1Room.things["gem"].label = "";
+
+	    var e = document.getElementById("pickup-gem");
+            if (e != null)
+            e.style.display = "block";
+
+            break;
+
+        //if you've talked to the monster
+        case "pickupgem_metmonster":
+            //case "text"
+            if (c.txt != null) {
+
+                longText = "A flawless GEM with an other-worldly sparkle. Could this be what the monster is searching for?";
+                if (c.lines != null)
+                    longTextLines = c.lines;
+                else
+                    longTextLines = 1;
+
+                if (c.align != null)
+                    longTextAlign = c.align;
+                else
+                    longTextAlign = "center";//or center
+
+                if (c.url == null)
+                    longTextLink = "";
+                else
+                    longTextLink = c.url;
+            }
+            else
+                print("Warning for text: make sure to specify arg as text")
+
+
+            var desertroom = ROOMS["MOOOVDesert1"];
+            var openAirCinemaRoom = ROOMS["MOOOVOpenAirCinema"];
+            var corridorRoom = ROOMS["MOOOVCorridor"];
+            var theater1Room = ROOMS["MOOOVTheater1"];
+
+            if (SOUND){
+                sfxGetGem.play();
+            }
+            //Monster now realizes you have the gem in your inventory
+            openAirCinemaRoom.things["monster"].command["cmd"] = "monster2";
+            openAirCinemaRoom.things["monster"].command["txt"] = "monster2";
+
+            //Make it so the player can't interact with the gem anymore
+            removeThing("gem", "MOOOVTheater1");
+            theater1Room.things["gem"].visible = false;
+            theater1Room.things["gem"].command["cmd"] = "nothing";
+            theater1Room.things["gem"].label = "";
+
+	    var e = document.getElementById("pickup-gem");
+            if (e != null)
+            e.style.display = "block";
+
+            break;
+
+        //Deliver the gem to the monster
+        case "monster2":
+            //case "text"
+
+            var openAirCinemaRoom = ROOMS["MOOOVOpenAirCinema"];
+
+            if (c.txt != null) {
+
+                //if(openAirCinemaRoom.things["monster"].command["txt"] == "monster2")
+                //{
+                    longText = "Monster:\nGEM!! YOU FRIEND. HERE HAVE GOGGLES.";
+                //}
+                //else
+                    //longText = "Monster:\nFRIEND GOOD. BUT NO GOOD FOR GEM. GEM MINE.";
+
+                if (c.lines != null)
+                    longTextLines = c.lines;
+                else
+                    longTextLines = 1;
+
+                if (c.align != null)
+                    longTextAlign = c.align;
+                else
+                    longTextAlign = "center";//or center
+
+                if (c.url == null)
+                    longTextLink = "";
+                else
+                    longTextLink = c.url;
+            }
+            else
+                print("Warning for text: make sure to specify arg as text")
+
+            //var desertroom = ROOMS["MOOOVDesert1"];
+
+            var corridorRoom = ROOMS["MOOOVCorridor"];
+            var theater1Room = ROOMS["MOOOVTheater1"];
+            var lobbyRoom = ROOMS ["MOOOVLobby"];
+
+            //Change monster's dialogue after you deliver gem
+            //openAirCinemaRoom.things["monster"].command["cmd"] = "text";
+            openAirCinemaRoom.things["monster"].command["cmd"] = "monster3";
+
+            var dataThing3 = openAirCinemaRoom.things["monster"];
+            dataThing3.spriteGraphics = openAirCinemaRoom.things["loadmonster"].spriteGraphics;
+            removeThing("monster", "MOOOVOpenAirCinema");
+            createThing(dataThing3, openAirCinemaRoom);
+
+            if (SOUND){
+                sfxDeliverGem.play();
+            }
+
+            //Open the secret room in the corridor by changing the the areaColor command
+            corridorRoom.areaColors["hff0000"].cmd = "enter";
+            corridorRoom.areaColors["hff0000"].label = "Hidden Doorway";
+            corridorRoom.areaColors["hff0000"].txt = "";
+            corridorRoom.things["ghostdoor"].visible = true;
+
+            //Add ghosts in the corridor visible here
+            corridorRoom.things["corridorghost1"].visible = true;
+            corridorRoom.things["corridorghost2"].visible = true;
+            corridorRoom.things["corridorghost3"].visible = true;
+
+            //Add ghosts in the lobby visible here
+            lobbyRoom.things["lobbyghost1"].visible = true;
+            lobbyRoom.things["lobbyghost2"].visible = true;
+            lobbyRoom.things["lobbyghost3"].visible = true;
+            lobbyRoom.things["lobbyghost4"].visible = true;
+            lobbyRoom.things["lobbyghost5"].visible = true;
+            lobbyRoom.things["lobbyghost6"].visible = true;
+
+            //Add ghosts in the theater visible here
+            theater1Room.things["theater1ghost1"].visible = true;
+            theater1Room.things["theater1ghost2"].visible = true;
+
+            var e = document.getElementById("pickup-gem");
+            if (e != null)
+            e.style.display = "none";
+
+            var e = document.getElementById("deliver-gem");
+            if (e != null)
+            e.style.display = "block";
+
+            break;
+
+        case "monster3":
+            //case "text"
+
+            if (c.txt != null) {
+
+                longText = "Monster:\nFRIEND GOOD. BUT NO GOOD FOR GEM. GEM MINE.";
+
+                if (c.lines != null)
+                    longTextLines = c.lines;
+                else
+                    longTextLines = 1;
+
+                if (c.align != null)
+                    longTextAlign = c.align;
+                else
+                    longTextAlign = "center";//or center
+
+                if (c.url == null)
+                    longTextLink = "";
+                else
+                    longTextLink = c.url;
+            }
+            else
+                print("Warning for text: make sure to specify arg as text")
+
+            break;
+
+        case "getcoupon":
+            //case "text"
+            if (c.txt != null) {
+
+                longText = "Congrats, you found a coupon code for a free MOOOV film! Check your inventory.\n Click here to enter the code";
+                if (c.lines != null)
+                    longTextLines = c.lines;
+                else
+                    longTextLines = 1;
+
+                if (c.align != null)
+                    longTextAlign = c.align;
+                else
+                    longTextAlign = "center";//or center
+
+                if (c.url == null)
+                    longTextLink = "";
+                else
+                    longTextLink = c.url;
+            }
+            else
+                print("Warning for text: make sure to specify arg as text")
+
+            var desertRoom = ROOMS["MOOOVDesert1"];
+            var openAirCinemaRoom = ROOMS["MOOOVOpenAirCinema"];
+            var corridorRoom = ROOMS["MOOOVCorridor"];
+            var theater1Room = ROOMS["MOOOVTheater1"];
+
+            //changing what Indiana Jones and the cactus say after you get the coupon
+            desertRoom.things["indianajones"].command["txt"] = "Indiana Jones:\nYou already got the treasure?!? I can't keep up with these new kids...";
+            desertRoom.things["cactus"].command["txt"] = "A Normal Cactus:\nYou found it, high five!... oh these spikes? Don't worry - no wait, come back! *sigh* one day I'll get my first high five..";
+
+            var e = document.getElementById("deliver-gem");
+            if (e != null)
+            e.style.display = "none";
+
+            var e = document.getElementById("pickup-coupon");
+            if (e != null)
+            e.style.display = "block";
+
+            break;
+
+        case "nothing":
+            break;
     }
-
 }
 
 //For better user experience I automatically focus on the chat textfield upon pressing a key
@@ -2321,7 +2721,7 @@ function nameValidationCallBack(code) {
                 e.innerHTML = "Sorry, only standard western characters are allowed";
         }
         else {
-
+            if (code == 2){AVATARS = MAXAVATARS;}
             hideUser();
             showAvatar();
             avatarSelection();
@@ -2346,7 +2746,7 @@ function previewAvatar() {
     var aSS = loadSpriteSheet(aGraphics, AVATAR_W, AVATAR_H, round(emoteSheets[currentAvatar].width / AVATAR_W));
     var aAnim = loadAnimation(aSS);
     avatarPreview = createSprite(width / 2, height / 2);
-    avatarPreview.scale = 6;
+    avatarPreview.scale = 8;
     avatarPreview.addAnimation("default", aAnim);
     avatarPreview.animation.frameDelay = 10;
     //avatarPreview.debug = true;
@@ -2615,12 +3015,6 @@ function outOfCanvas() {
 function preventBehavior(e) {
     e.preventDefault();
 };
-
-function toggleAreaColor()
-{
-    var dbar = ROOMS["dBsBar"];
-    dbar.areaColors["hff00ff"].cmd = "enter";
-}
 
 document.addEventListener("touchmove", preventBehavior, { passive: false });
 

@@ -336,7 +336,6 @@ function thirdFloorTalk(playerId, bubble) {
 
 }
 
-
 //called when I receive data from a player already in the room
 //should arrive
 function familyRoomIntro(playerId, roomId) {
@@ -421,9 +420,129 @@ function firstFloorEnter(playerId, roomId) {
 
 	var youtubeParameters = "?autoplay=1&mute=1&enablejsapi=1&loop=1";
 
-	var playlistId = "";
-
 	var currentLocalYoutubeId = null; //null;
+
+    function IFALobbyEnter(playerId, roomId)
+	{
+		if(playerId == me.id)
+		{
+			e = document.getElementById("video-container");
+			if (e != null)
+			e.style.display = "none";
+	    }
+	}
+
+    function MOOOVOpenAirCinemaEnter(playerId, roomId)
+	{
+		print("Freeplay! " + players[playerId].nickName + " entered room " + roomId);
+		if(playerId == me.id && players[playerId].nickName.length > 0)
+		{
+			print("player with name entered dBs");
+			// start the video!
+      setVideo("AhXUEnjEn9Q", true, "");
+			//setVideo("playlist&list=PLNiztf0SpnykWe8WJuka-EPJLvKCNg5XC");
+		}
+	 // e = document.getElementById("talk-form");
+		//if (e != null)
+			//e.style.display = "none";
+
+	//	e = document.getElementById("no-talkie");
+		//if (e != null)
+		//	e.style.display = "block";
+    }
+
+     function MOOOVOpenAirCinemaExit(playerId)
+	{
+        setVideo("", true, "");
+
+		if(playerId == me.id)
+		{
+			console.log("I Left Freeplay");
+			e = document.getElementById("video-container");
+			if (e != null)
+				e.style.display = "none";
+
+			e = document.getElementById("talk-form");
+			if (e != null)
+			  e.style.display = "block";
+
+			e = document.getElementById("no-talkie");
+		  	if (e != null)
+			  e.style.display = "none";
+
+		}
+		else
+		{
+			console.log(players[playerId].nickName + " Left Freeplay");
+		}
+    }
+
+    function MOOOVTheater1Enter(playerId, roomId)
+	{
+		print("Freeplay! " + players[playerId].nickName + " entered room " + roomId);
+		if(playerId == me.id && players[playerId].nickName.length > 0)
+		{
+			print("player with name entered dBs");
+			// start the video!
+      setVideo("", true, "playlist&list=PLG-7QXl06mChfwfMajuCOvfExLmOaXlla");
+			//setVideo("playlist&list=PLNiztf0SpnykWe8WJuka-EPJLvKCNg5XC");
+		}
+	 // e = document.getElementById("talk-form");
+		//if (e != null)
+			//e.style.display = "none";
+
+	//	e = document.getElementById("no-talkie");
+		//if (e != null)
+		//	e.style.display = "block";
+    }
+
+    function MOOOVTheater1Exit(playerId)
+	{
+        setVideo("", true, "");
+
+		if(playerId == me.id)
+		{
+			console.log("I Left Freeplay");
+			e = document.getElementById("video-container");
+			if (e != null)
+				e.style.display = "none";
+
+			e = document.getElementById("talk-form");
+			if (e != null)
+			  e.style.display = "block";
+
+			e = document.getElementById("no-talkie");
+		  	if (e != null)
+			  e.style.display = "none";
+
+		}
+		else
+		{
+			console.log(players[playerId].nickName + " Left Freeplay");
+		}
+    }
+
+    function setVideo(videoId, reload, playlistId) //function setVideo(videoId, reload, playlistId)
+	{
+		if(nickName == "")
+		{
+			console.log("Player in lurk mode, don't start video yet!");
+			return;
+		}
+
+		if(videoId != currentLocalYoutubeId || reload == true)
+		{// only update video if it has changed!
+			currentLocalYoutubeId = videoId;
+			var videoUrl = youtubeUrl + videoId + youtubeParameters + playlistId;
+			player = select("#yt_video");
+			player.attribute('src', videoUrl);
+		}
+		e = document.getElementById("video-container");
+		if (e != null)
+			e.style.display = "block";
+	}
+
+    /*
 
 	function dBsZaalEnter(playerId, roomId)
 	{
@@ -442,26 +561,6 @@ function firstFloorEnter(playerId, roomId) {
 	//	e = document.getElementById("no-talkie");
 		//if (e != null)
 		//	e.style.display = "block";
-	}
-
-	function setVideo(videoId, reload)
-	{
-		if(nickName == "")
-		{
-			console.log("Player in lurk mode, don't start video yet!");
-			return;
-		}
-
-		if(videoId != currentLocalYoutubeId || reload == true)
-		{// only update video if it has changed!
-			currentLocalYoutubeId = videoId;
-			var videoUrl = youtubeUrl + videoId + youtubeParameters + playlistId;
-			player = select("#yt_video");
-			player.attribute('src', videoUrl);
-		}
-		e = document.getElementById("video-container");
-		if (e != null)
-			e.style.display = "block";
 	}
 
 	//roomnameExit: called right before a player exits or disconnects
@@ -491,16 +590,19 @@ function firstFloorEnter(playerId, roomId) {
 			console.log(players[playerId].nickName + " Left Freeplay");
 		}
     }
+
 	function dBsBarEnter(playerId, roomId)
 	{
 		if(playerId == me.id)
-    {
-			 e = document.getElementById("video-container");
-			 if (e != null)
-			 e.style.display = "none";
-	  }
+		{
+			e = document.getElementById("video-container");
+			if (e != null)
+			e.style.display = "none";
+	    }
 	}
+*/
 
+/*
     function LIFFTheater2Enter(playerId, roomId)
     {
         //Empty just to declare this
@@ -520,3 +622,4 @@ function firstFloorEnter(playerId, roomId) {
     {
         //Empty just to declare this
     }
+    */
