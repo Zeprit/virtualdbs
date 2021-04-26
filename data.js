@@ -26,9 +26,11 @@ module.exports.ROOMS =
             //h will be replaced by #
             hff0000: { cmd: "enter", room: "dBsBar", label: "Bar", point: [243, 144], enterPoint: [94, 74], obstacle: false },
         },
-        things: 
+        things:
         {
-
+            sidney: { file: "npcSidney.png", label: "Sidney", frames: 1, frameDelay: 10, position: [5, 157]},
+            bert: { file: "npcBert.png", label: "Bert", frames: 1, frameDelay: 10, position: [208, 148]},
+            axel: { file: "npcAxel.png", label: "Axel", frames: 1, frameDelay: 10, position: [185, 149]},
         }
     },
 
@@ -54,8 +56,8 @@ module.exports.ROOMS =
             h0000ff: { cmd: "text", url: "https://www.dbstudio.nl/concerten/", label: "Programma", txt: "Klik of Tik op dit bericht om te kijken wat voor bands of evenementen er aan komen!", align: "center", lines: 3, point: [59,66] },
 
         },
-        
-        things: 
+
+        things:
         {
             barChair1: { file: "dBsBarChair.png", frames: 1, frameDelay: 10, position: [185, 68]},
             barChair2: { file: "dBsBarChair.png", frames: 1, frameDelay: 10, position: [187, 88]},
@@ -67,6 +69,12 @@ module.exports.ROOMS =
             lampAndPlant: { file: "dBsBarLampAndPlant.png", frames: 1, frameDelay: 10, position: [119, 0]},
             plant: { file: "dBsBarPlant.png", frames: 1, frameDelay: 10, position: [2, 154]},
             shopAndPlant: { file: "dBsBarShopAndPlant.png", frames: 1, frameDelay: 10, position: [197, 34]},
+
+            andre: { file: "npcAndre.png", frames: 1, label: "Andre", frameDelay: 10, position: [223, 61]},
+            kyon: { file: "npcKyon.png", frames: 1, label: "Kyon", frameDelay: 10, position: [234, 87]},
+            sander: { file: "npcSander.png", frames: 1, label: "Sander", frameDelay: 10, position: [219, 101]},
+            nick: { file: "npcNick.png", frames: 1, label: "Nick", frameDelay: 10, position: [222, 137]},
+            jeroen: { file: "npcJeroen.png", frames: 1, label: "Jeroen", frameDelay: 10, position: [49, 48]},
         }
     },
 
@@ -87,7 +95,7 @@ module.exports.ROOMS =
             h00ffbc: { cmd: "enter", room: "dBsBar", label: "Bar", point: [156, 184], enterPoint: [156, 30], obstacle: false },
         },
 
-        things: 
+        things:
         {
             brownChairSide1: { file: "dBsLobbyBrownChairSide.png", frames: 1, frameDelay: 10, position: [222, 128]},
             brownChairFront1: { file: "dBsLobbyBrownChairFront.png", frames: 1, frameDelay: 10, position: [188, 97]},
@@ -106,6 +114,10 @@ module.exports.ROOMS =
             pinkTable: { file: "dBsLobbyPinkTable.png", frames: 1, frameDelay: 10, position: [185, 108]},
             redTable: { file: "dBsLobbyRedTable.png", frames: 1, frameDelay: 10, position: [146, 140]},
             yellowTable: { file: "dBsLobbyYellowTable.png", frames: 1, frameDelay: 10, position: [103, 97]},
+
+            renata: { file: "npcRenata.png", label: "Renata", frames: 1, frameDelay: 10, position: [32, 83]},
+            bas: { file: "npcBas.png", label: "Bas", frames: 1, frameDelay: 10, position: [186, 53]},
+            anne: { file: "npcAnne.png", label: "Anne", frames: 1, frameDelay: 10, position: [219, 157]},
         }
     },
 
@@ -124,8 +136,25 @@ module.exports.ROOMS =
             //h will be replaced by #
             hff0000: { cmd: "enter", room: "dBsLobby", label: "Lobby", point: [128,189], enterPoint: [50,35], obstacle: false },
         },
-        things: {
+        things:
+        {
+            picnicTable1: { file: "dBsBeerGartenPicknictable1.png", frames: 1, frameDelay: 10, position: [193,82], obstacle: true},
+            picnicTable2: { file: "dBsBeerGartenPicknictable2.png", frames: 1, frameDelay: 10, position: [13,114], obstacle: true},
+            chair1: { file: "dBsBeerGartenChair1.png", frames: 1, frameDelay: 10, position: [111,102]},
+            chair2: { file: "dBsBeerGartenChair2.png", frames: 1, frameDelay: 10, position: [95,113]},
+            stool: { file: "dBsBeerGartenStool.png", frames: 1, frameDelay: 10, position: [226,139]},
+            torch: { file: "dBsBeerGartenTorch.png", frames: 4, frameDelay: 10, position: [161,132]},
+            torch2: { file: "dBsBeerGartenTorch.png", frames: 4, frameDelay: 10, position: [75,156]},
+            pole: { file: "dBsBeerGartenPole.png", frames: 1, frameDelay: 10, position: [112, 34]},
+            poleLights: { file: "dBsBeerGartenPoleLIGHTS.png", frames: 1, frameDelay: 10, position: [0, 0]},
+            fence: { file: "dBsBeerGartenFence.png", frames: 1, frameDelay: 10, position: [0,158]},
 
+            james: { file: "npcJames.png", label: "James", frames: 1, frameDelay: 10, position: [192, 154]},
+            evert: { file: "npcEvert.png", label: "Evert", frames: 1, frameDelay: 10, position: [211, 152]},
+            robert: { file: "npcRobert.png", label: "Robert", frames: 1, frameDelay: 10, position: [227, 162]},
+            paul: { file: "npcPaul.png", label: "Paul", frames: 1, frameDelay: 10, position: [128, 88]},
+            tristan: { file: "npcTristan.png", label: "Tristan", frames: 1, frameDelay: 10, position: [61, 133]},
+            jos: { file: "npcJos.png", label: "Jos", frames: 1, frameDelay: 10, position: [234, 117]},
         }
     },
 
@@ -144,12 +173,15 @@ module.exports.ROOMS =
         {
             //h will be replaced by #
             hff0000: { cmd: "enter", room: "dBsBar", label: "Bar", point: [127,13], enterPoint: [127,186], obstacle: false },
-            hff7700: { cmd: "text", url: "https://portal.dbstudio.nl/", label: "Reserveringen", txt: "Wil je komen repeteren in onze toffe oefenstudios?\n\nKlik of Tik op dit bericht.", align: "center", lines: 4, point: [126,130], obstacle: true },
+            hff7700: { cmd: "text", url: "https://portal.dbstudio.nl/", label: "Reserveringen", txt: "Wil je komen repeteren in onze toffe oefenstudios?\n\nKlik of Tik op dit bericht.", align: "center", lines: 4, point: [126, 140], obstacle: true },
         },
         things:
         {
-            hallLamp: { file: "dBsHallLamp.png", frames: 1, frameDelay: 10, position: [105, 0]},
+            hallLamp: { file: "dBsHallLamp.png", frames: 1, frameDelay: 10, position: [102, 0]},
             hallRedLamp: { file: "dBsHallRedLamp.png", frames: 1, frameDelay: 10, position: [144, 133]},
+
+            jimmy: { file: "npcJimmy.png", label: "Jimmy", frames: 1, frameDelay: 10, position: [144, 54]},
+            vincent: { file: "npcVincent.png", label: "Vincent", frames: 1, frameDelay: 10, position: [101, 142]},
         }
     },
 
