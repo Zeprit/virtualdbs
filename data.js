@@ -114,6 +114,11 @@ module.exports.ROOMS =
             pinkTable: { file: "dBsLobbyPinkTable.png", frames: 1, frameDelay: 10, position: [185, 108]},
             redTable: { file: "dBsLobbyRedTable.png", frames: 1, frameDelay: 10, position: [146, 140]},
             yellowTable: { file: "dBsLobbyYellowTable.png", frames: 1, frameDelay: 10, position: [103, 97]},
+            brownTable: { file: "dBsLobbyTablesNearBench.png", frames: 1, frameDelay: 10, position: [125,62]},
+            sideTable1: { file: "dBsLobbySideTable1.png", frames: 1, frameDelay: 10, position: [231,148]},
+            sideTable2: { file: "dBsLobbySideTable2.png", frames: 1, frameDelay: 10, position: [231,122]},
+            sideTable3: { file: "dBsLobbySideTable3.png", frames: 1, frameDelay: 10, position: [231,99]},
+            sideTable4: { file: "dBsLobbySideTable4.png", frames: 1, frameDelay: 10, position: [243,78]},
 
             renata: { file: "npcRenata.png", label: "Renata", frames: 1, frameDelay: 10, position: [32, 83]},
             bas: { file: "npcBas.png", label: "Bas", frames: 1, frameDelay: 10, position: [186, 53]},
