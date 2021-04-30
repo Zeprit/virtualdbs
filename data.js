@@ -86,7 +86,7 @@ module.exports.ROOMS =
         area: "dBsLobby_areas.png",
         tint: "#ffffff",
         pageBg: "#170102",
-        bubblesY: 45,
+        bubblesY: 31,
         tYOffset: 0,
         spawn: [141, 102, 181, 121],
         areaColors: {
@@ -114,7 +114,8 @@ module.exports.ROOMS =
             pinkTable: { file: "dBsLobbyPinkTable.png", frames: 1, frameDelay: 10, position: [185, 108]},
             redTable: { file: "dBsLobbyRedTable.png", frames: 1, frameDelay: 10, position: [146, 140]},
             yellowTable: { file: "dBsLobbyYellowTable.png", frames: 1, frameDelay: 10, position: [103, 97]},
-            brownTable: { file: "dBsLobbyTablesNearBench.png", frames: 1, frameDelay: 10, position: [125,62]},
+            brownTableRect: { file: "dBsLobbyTablesNearBench.png", frames: 1, frameDelay: 10, position: [125,62]},
+            brownTableRound: { file: "dBsLobbyBrownTable.png", frames: 1, frameDelay: 10, position: [63,136]},
             sideTable1: { file: "dBsLobbySideTable1.png", frames: 1, frameDelay: 10, position: [231,148]},
             sideTable2: { file: "dBsLobbySideTable2.png", frames: 1, frameDelay: 10, position: [231,122]},
             sideTable3: { file: "dBsLobbySideTable3.png", frames: 1, frameDelay: 10, position: [231,99]},
