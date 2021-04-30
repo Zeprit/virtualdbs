@@ -86,7 +86,7 @@ module.exports.ROOMS =
         area: "dBsLobby_areas.png",
         tint: "#ffffff",
         pageBg: "#170102",
-        bubblesY: 45,
+        bubblesY: 31,
         tYOffset: 0,
         spawn: [141, 102, 181, 121],
         areaColors: {
