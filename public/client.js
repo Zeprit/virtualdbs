@@ -67,7 +67,7 @@ var SETTINGS;
 var IMAGES, SOUNDS;
 
 //avatar linear speed, pixels per milliseconds
-var SPEED = 65;
+var SPEED = 72;
 
 var ASSETS_FOLDER = "assets/";
 
