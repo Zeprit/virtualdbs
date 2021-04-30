@@ -53,7 +53,7 @@ module.exports.ROOMS =
             h00ffbc: { cmd: "enter", room: "dBsHall", label: "Hall", point: [128,190], enterPoint: [127,34], obstacle: false },
             h1400ff: { cmd: "text", url: "https://shop.dbstudio.nl/", label: "dBs Shop", txt: "Voor alle dBs merchandise, of zo een heerlijk drankje!\n\nKlik of Tik op dit bericht om de winkel te bezoeken.", align: "center", lines: 5, point: [183,64] },
             //hff0000: { cmd: "text", url: "https://portal.dbstudio.nl/", label: "Reserveringen", txt: "Wil je komen repeteren in onze toffe oefenstudios?\n\nKlik of Tik op dit bericht.", align: "center", lines: 4, point: [189,149] },
-            h0000ff: { cmd: "text", url: "https://www.dbstudio.nl/concerten/", label: "Programma", txt: "Klik of Tik op dit bericht om te kijken wat voor bands of evenementen er aan komen!", align: "center", lines: 3, point: [59,66] },
+            hff8600: { cmd: "text", url: "https://www.dbstudio.nl/concerten/", label: "Programma", txt: "Klik of Tik op dit bericht om te kijken wat voor bands of evenementen er aan komen!", align: "center", lines: 3, point: [63,88] },
 
         },
 
@@ -86,7 +86,7 @@ module.exports.ROOMS =
         area: "dBsLobby_areas.png",
         tint: "#ffffff",
         pageBg: "#170102",
-        bubblesY: 45,
+        bubblesY: 31,
         tYOffset: 0,
         spawn: [141, 102, 181, 121],
         areaColors: {
@@ -114,6 +114,12 @@ module.exports.ROOMS =
             pinkTable: { file: "dBsLobbyPinkTable.png", frames: 1, frameDelay: 10, position: [185, 108]},
             redTable: { file: "dBsLobbyRedTable.png", frames: 1, frameDelay: 10, position: [146, 140]},
             yellowTable: { file: "dBsLobbyYellowTable.png", frames: 1, frameDelay: 10, position: [103, 97]},
+            brownTableRect: { file: "dBsLobbyTablesNearBench.png", frames: 1, frameDelay: 10, position: [125,62]},
+            brownTableRound: { file: "dBsLobbyBrownTable.png", frames: 1, frameDelay: 10, position: [63,136]},
+            sideTable1: { file: "dBsLobbySideTable1.png", frames: 1, frameDelay: 10, position: [231,148]},
+            sideTable2: { file: "dBsLobbySideTable2.png", frames: 1, frameDelay: 10, position: [231,122]},
+            sideTable3: { file: "dBsLobbySideTable3.png", frames: 1, frameDelay: 10, position: [231,99]},
+            sideTable4: { file: "dBsLobbySideTable4.png", frames: 1, frameDelay: 10, position: [243,78]},
 
             renata: { file: "npcRenata.png", label: "Renata", frames: 1, frameDelay: 10, position: [32, 83]},
             bas: { file: "npcBas.png", label: "Bas", frames: 1, frameDelay: 10, position: [186, 53]},
