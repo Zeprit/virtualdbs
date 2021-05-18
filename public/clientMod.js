@@ -418,19 +418,10 @@ function firstFloorEnter(playerId, roomId) {
 
 	var youtubeUrl = "https://www.youtube.com/embed/";
 
-	var youtubeParameters = "?autoplay=1&mute=1&enablejsapi=1&loop=1";
+	var youtubeParameters = "?autoplay=1&mute=0&enablejsapi=1&loop=1";
 
 	var currentLocalYoutubeId = null; //null;
 
-    function IFALobbyEnter(playerId, roomId)
-	{
-		if(playerId == me.id)
-		{
-			e = document.getElementById("video-container");
-			if (e != null)
-			e.style.display = "none";
-	    }
-	}
 
     function dBsZaalEnter(playerId, roomId)
 	{
@@ -439,7 +430,7 @@ function firstFloorEnter(playerId, roomId) {
 		{
 			print("player with name entered dBs");
 			// start the video!
-      setVideo("9oleJ4OUnxU", true, "");
+      //setVideo("9oleJ4OUnxU", true, "");
 			//setVideo("playlist&list=PLNiztf0SpnykWe8WJuka-EPJLvKCNg5XC");
 		}
 	 // e = document.getElementById("talk-form");
@@ -452,95 +443,51 @@ function firstFloorEnter(playerId, roomId) {
     }
 
      function dBsZaalExit(playerId)
-	{
-        setVideo("", true, "");
+	   {
+        //setVideo("", true, "");
 
-		if(playerId == me.id)
-		{
-			console.log("I Left Freeplay");
-			e = document.getElementById("video-container");
-			if (e != null)
-				e.style.display = "none";
+  		if(playerId == me.id)
+  		{
+  			console.log("I left");
+  			e = document.getElementById("video-container");
+  			if (e != null)
+  				e.style.display = "none";
 
-			e = document.getElementById("talk-form");
-			if (e != null)
-			  e.style.display = "block";
+  			e = document.getElementById("talk-form");
+  			if (e != null)
+  			  e.style.display = "block";
 
-			e = document.getElementById("no-talkie");
-		  	if (e != null)
-			  e.style.display = "none";
+  			e = document.getElementById("no-talkie");
+  		  	if (e != null)
+  			  e.style.display = "none";
 
-		}
-		else
-		{
-			console.log(players[playerId].nickName + " Left Freeplay");
-		}
+  		}
+  		else
+  		{
+  			console.log(players[playerId].nickName + " Left Freeplay");
+  		}
     }
 
-    function MOOOVTheater1Enter(playerId, roomId)
-	{
-		print("Freeplay! " + players[playerId].nickName + " entered room " + roomId);
-		if(playerId == me.id && players[playerId].nickName.length > 0)
-		{
-			print("player with name entered dBs");
-			// start the video!
-      setVideo("", true, "playlist&list=PLG-7QXl06mChfwfMajuCOvfExLmOaXlla");
-			//setVideo("playlist&list=PLNiztf0SpnykWe8WJuka-EPJLvKCNg5XC");
-		}
-	 // e = document.getElementById("talk-form");
-		//if (e != null)
-			//e.style.display = "none";
-
-	//	e = document.getElementById("no-talkie");
-		//if (e != null)
-		//	e.style.display = "block";
-    }
-
-    function MOOOVTheater1Exit(playerId)
-	{
-        setVideo("", true, "");
-
-		if(playerId == me.id)
-		{
-			console.log("I Left Freeplay");
-			e = document.getElementById("video-container");
-			if (e != null)
-				e.style.display = "none";
-
-			e = document.getElementById("talk-form");
-			if (e != null)
-			  e.style.display = "block";
-
-			e = document.getElementById("no-talkie");
-		  	if (e != null)
-			  e.style.display = "none";
-
-		}
-		else
-		{
-			console.log(players[playerId].nickName + " Left Freeplay");
-		}
-    }
 
     function setVideo(videoId, reload, playlistId) //function setVideo(videoId, reload, playlistId)
-	{
-		if(nickName == "")
-		{
-			console.log("Player in lurk mode, don't start video yet!");
-			return;
-		}
+	  {
+  		if(nickName == "")
+  		{
+  			console.log("Player in lurk mode, don't start video yet!");
+  			return;
+  		}
 
-		if(videoId != currentLocalYoutubeId || reload == true)
-		{// only update video if it has changed!
-			currentLocalYoutubeId = videoId;
-			var videoUrl = youtubeUrl + videoId + youtubeParameters + playlistId;
-			player = select("#yt_video");
-			player.attribute('src', videoUrl);
-		}
-		e = document.getElementById("video-container");
-		if (e != null)
-			e.style.display = "block";
-	}
+  		if(videoId != currentLocalYoutubeId || reload == true)
+  		{// only update video if it has changed!
+  			currentLocalYoutubeId = videoId;
+  			var videoUrl = youtubeUrl + videoId + youtubeParameters + playlistId;
+  			player = select("#yt_video");
+  			player.attribute('src', videoUrl);
+  		}
+  		e = document.getElementById("video-container");
+  		if (e != null)
+  			e.style.display = "block";
+	  }
 
     /*
 

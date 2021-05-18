@@ -39,22 +39,22 @@ var ACTIVITY_TIMEOUT = 10 * 60 * 1000;
 //should be the same as index maxlength="16"
 var MAX_NAME_LENGTH = 16;
 
-//cap the overall players 
+//cap the overall players
 var MAX_PLAYERS = -1;
-//refuse people when a room is full 
+//refuse people when a room is full
 var MAX_PLAYERS_PER_ROOM = 200;
 
 //views since the server started counts relogs
 var visits = 0;
 
 /*
-A very rudimentary admin system. 
+A very rudimentary admin system.
 Reserved usernames and admin pass are stored in .env file as
 ADMINS=username1|pass1,username2|pass2
 
 Admin logs in as username|password in the normal field
 If combo user|password is correct (case insensitive) mark the player as admin on the server side
-The "username|password" remains stored on the client as var nickName 
+The "username|password" remains stored on the client as var nickName
 and it's never shared to other clients, unlike player.nickName
 
 admins can call admin commands from the chat like /kick nickName
@@ -239,7 +239,7 @@ io.on("connection", function (socket) {
 
 
                     //send all players information about the new player
-                    //upon creation destination and position are the same 
+                    //upon creation destination and position are the same
                     io.to(playerInfo.room).emit("playerJoined", newPlayer);
 
                     //check if there are NPCs in this room and make them send info to the player
@@ -520,7 +520,7 @@ io.on("connection", function (socket) {
     });
 
 
-    //generic action listener, looks for a function with that id in the mod 
+    //generic action listener, looks for a function with that id in the mod
     socket.on("action", function (aId) {
 
         if (MOD["on" + aId] != null) {
@@ -560,7 +560,7 @@ function validateName(nn) {
 
         for (var i = 0; i < admins.length; i++) {
             if (admins[i].toUpperCase() == nn.toUpperCase()) {
-                //it is an admin name! check if the password is correct, case insensitive 
+                //it is an admin name! check if the password is correct, case insensitive
                 var envCombo = admins[i].split("|");
 
                 if (p == envCombo[1])
@@ -576,7 +576,7 @@ function validateName(nn) {
         for (var i = 0; i < admins.length; i++) {
             var combo = admins[i].split("|");
             if (combo[0].toUpperCase() == nn.toUpperCase()) {
-                //it is! kill it. Yes, it should be done at login and communicated 
+                //it is! kill it. Yes, it should be done at login and communicated
                 //but hey I don't have to be nice to users who steal my name
                 reserved = true;
             }
@@ -648,6 +648,13 @@ function adminCommand(adminSocket, str) {
                     adminSocket.emit("popup", "I can't find a user named " + cmd[1]);
                 }
                 break;
+
+            case "reloadVideo":
+                  cmd.shift();
+                    var msg = cmd.join(" ");
+                    global.currentvideo = msg;
+                    io.sockets.emit("reloadVideo", msg);
+                  break;
 
             //trigger a direct popup
             case "popup":
@@ -791,7 +798,7 @@ filter.addWords(...myBadWords);
 function print(s) { console.log(s); }
 
 /*
-NPC 
+NPC
 exists in a room
 broadcasts the the same join, leave, move, talk, intro events
 is rendered like and avatar by the client
@@ -819,7 +826,7 @@ global.NPC = function (o) {
     //mimicks the emission from players
     this.sendIntroTo = function (pId) {
         //print("HELLO I"m " + this.nickName + " in " + this.room);
-        //If I"m not the new player send an introduction to the new player 
+        //If I"m not the new player send an introduction to the new player
         //slight issue, server doesn't compute movements so if moving it appears at the destination
         //a way to solve this would be to save the time of the movement and lerp it
         io.sockets.sockets[pId].emit("onIntro", {

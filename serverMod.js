@@ -17,6 +17,7 @@ module.exports.initMod = function (io, gameState, DATA) {
     global.gameState = gameState;
     global.io = io;
     global.DATA = DATA;
+    global.currentvideo = "jjZFai6rwZE";
 
     //family room roles
     global.familyRoles = {
@@ -595,4 +596,9 @@ module.exports.onTVInteract = function (pId) {
     DATA.ROOMS.familyRoom.things.TV.visible = TVState;
     //send a thing update too ALL clients, changing the client data and telling them to delete and recreate the sprite if they are in the room
     io.sockets.emit("thingChanged", { thingId: "TV", room: "familyRoom", property: "visible", value: TVState });
+}
+
+
+module.exports.dBsZaalJoin = function (playerObject, roomId) {
+  io.to(playerObject.id).emit("changeVideo", global.currentvideo);
 }
