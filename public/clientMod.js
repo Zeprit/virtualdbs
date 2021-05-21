@@ -429,6 +429,9 @@ function firstFloorEnter(playerId, roomId) {
 		if(playerId == me.id && players[playerId].nickName.length > 0)
 		{
 			print("player with name entered dBs");
+      e = document.getElementById("video-container");
+      if (e != null)
+        e.style.display = "block";
 			// start the video!
       //setVideo("9oleJ4OUnxU", true, "");
 			//setVideo("playlist&list=PLNiztf0SpnykWe8WJuka-EPJLvKCNg5XC");
@@ -477,16 +480,13 @@ function firstFloorEnter(playerId, roomId) {
   			return;
   		}
 
-  		if(videoId != currentLocalYoutubeId || reload == true)
+  		if (videoId != currentLocalYoutubeId || reload == true)
   		{// only update video if it has changed!
   			currentLocalYoutubeId = videoId;
   			var videoUrl = youtubeUrl + videoId + youtubeParameters + playlistId;
   			player = select("#yt_video");
   			player.attribute('src', videoUrl);
   		}
-  		e = document.getElementById("video-container");
-  		if (e != null)
-  			e.style.display = "block";
 	  }
 
     /*
